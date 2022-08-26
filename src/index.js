@@ -40,7 +40,7 @@ createUserWithEmailAndPassword(auth, email, password)
 .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    // ...
+    console.log("It Works");
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -56,5 +56,5 @@ createUserWithEmailAndPassword(auth, email, password)
   })
   .catch((error) => {
     const errorCode = error.code;
-    const errorMessage = "nope";
+    const errorMessage = error.message;
   });
