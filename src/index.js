@@ -1,5 +1,5 @@
 import {initializeApp} from 'firebase/app';
-import {getAuth} from 'firebase/auth';
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 import {getFirestore} from 'firebase/firestore';
 import {getStorage} from 'firebase/storage';
 const firebaseApp = initializeApp({
@@ -14,3 +14,24 @@ const firebaseApp = initializeApp({
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp);
+createUserWithEmailAndPassword(auth, email, password)
+.then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
