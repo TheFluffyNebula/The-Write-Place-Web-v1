@@ -11,9 +11,31 @@ const firebaseApp = initializeApp({
     appId: "1:144537031501:web:381f1b2964a4e95c049d04",
     measurementId: "G-RFS3FW3HTE"
 })
+//Variables
+SignIn = document.getElementById("buttonSignIn");
+SignIn.addEventListener("click",onClickSignIn);
+Register = document.getElementById("buttonRegister");
+Register.addEventListener("click",onClickRegister);
+ResetPassword = document.getElementById("buttonResetPassword");
+ResetPassword.addEventListener("click",onClickResetPassword);
+editEmail = document.getElementById("editEmail");
+editUsername = document.getElementById("editUsername");
+editPassword = document.getElementById("editPassword");
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp);
+
+function onClickSignIn(){
+  email = editEmail.value;
+  password = editPassword.value;
+  signInWithEmailAndPassword(email, password);
+}
+function onClickRegister(){
+  email = editEmail.value;
+  username = editUsername.value;
+  password = editPassword.value;
+  createUserWithEmailAndPassword(email, password);
+}
 createUserWithEmailAndPassword(auth, email, password)
 .then((userCredential) => {
     // Signed in 
