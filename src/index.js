@@ -40,19 +40,17 @@ createUserWithEmailAndPassword(auth, email, password)
 .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log("It Works");
+    location.replace("https://thefluffynebula.github.io/The-Write-Place-Web-v1/Profile");
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    // ..
   });
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log("It works");
-    location.replace("Profile.html");
+    location.replace("https://thefluffynebula.github.io/The-Write-Place-Web-v1/Profile");
   })
   .catch((error) => {
     const errorCode = error.code;
