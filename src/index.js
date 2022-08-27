@@ -43,7 +43,7 @@ createUserWithEmailAndPassword(auth, email, password)
     location.replace("https://thefluffynebula.github.io/The-Write-Place-Web-v1/Profile");
   })
   .catch((error) => {
-    const errorCode = error.code;
+    const er\Login.htmlrorCode = error.code;
     const errorMessage = error.message;
   });
   signInWithEmailAndPassword(auth, email, password)
