@@ -1,7 +1,6 @@
-import {initializeApp} from 'firebase/app';
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
-import {getFirestore} from 'firebase/firestore';
-import {getStorage} from 'firebase/storage';
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+import {getFirestore} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
     authDomain: "the-write-place-ea1e8.firebaseapp.com",
@@ -23,7 +22,6 @@ editUsername = document.getElementById("editUsername");
 editPassword = document.getElementById("editPassword");
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
-const storage = getStorage(firebaseApp);
 
 function onClickSignIn(){
   email = editEmail.value;
