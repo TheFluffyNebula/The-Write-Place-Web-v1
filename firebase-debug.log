@@ -1,0 +1,57 @@
+[debug] [2022-08-27T23:52:05.741Z] ----------------------------------------------------------------------
+[debug] [2022-08-27T23:52:05.742Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jason\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only hosting
+[debug] [2022-08-27T23:52:05.743Z] CLI Version:   11.8.0
+[debug] [2022-08-27T23:52:05.743Z] Platform:      win32
+[debug] [2022-08-27T23:52:05.743Z] Node Version:  v18.8.0
+[debug] [2022-08-27T23:52:05.744Z] Time:          Sat Aug 27 2022 19:52:05 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-08-27T23:52:05.744Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-27T23:52:05.791Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-27T23:52:05.792Z] > authorizing via signed-in user (jasonyin30@gmail.com)
+[debug] [2022-08-27T23:52:05.792Z] [iam] checking project the-write-place-ea1e8 for permissions ["firebase.projects.get"]
+[debug] [2022-08-27T23:52:05.795Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-write-place-ea1e8:testIamPermissions [none]
+[debug] [2022-08-27T23:52:05.795Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-write-place-ea1e8:testIamPermissions x-goog-quota-user=projects/the-write-place-ea1e8
+[debug] [2022-08-27T23:52:05.796Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-write-place-ea1e8:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-08-27T23:52:06.277Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-write-place-ea1e8:testIamPermissions 200
+[debug] [2022-08-27T23:52:06.277Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-write-place-ea1e8:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-08-27T23:52:06.278Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8 [none]
+[debug] [2022-08-27T23:52:06.941Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8 200
+[debug] [2022-08-27T23:52:06.942Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8 {"projectId":"the-write-place-ea1e8","projectNumber":"144537031501","displayName":"The Write Place","name":"projects/the-write-place-ea1e8","resources":{"hostingSite":"the-write-place-ea1e8","storageBucket":"the-write-place-ea1e8.appspot.com","locationId":"us-east1"},"state":"ACTIVE","etag":"1_3596664a-5436-46c6-90bc-779798186009"}
+[debug] [2022-08-27T23:52:06.943Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-write-place-ea1e8/sites 
+[debug] [2022-08-27T23:52:07.483Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-write-place-ea1e8/sites 200
+[debug] [2022-08-27T23:52:07.484Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-write-place-ea1e8/sites {"sites":[{"name":"projects/the-write-place-ea1e8/sites/the-write-place-ea1e8","defaultUrl":"https://the-write-place-ea1e8.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2022-08-27T23:52:07.484Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8/webApps/-/config [none]
+[debug] [2022-08-27T23:52:08.007Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8/webApps/-/config 200
+[debug] [2022-08-27T23:52:08.007Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8/webApps/-/config {"projectId":"the-write-place-ea1e8","appId":"1:144537031501:web:381f1b2964a4e95c049d04","storageBucket":"the-write-place-ea1e8.appspot.com","locationId":"us-east1","apiKey":"AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc","authDomain":"the-write-place-ea1e8.firebaseapp.com","messagingSenderId":"144537031501","measurementId":"G-RFS3FW3HTE"}
+[info] i  hosting: Serving hosting files from: dist {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mdist\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: 127.0.0.1 - - [27/Aug/2022:23:56:38 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Aug/2022:23:56:38 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36\""}}
+[debug] [2022-08-28T00:01:56.855Z] ----------------------------------------------------------------------
+[debug] [2022-08-28T00:01:56.857Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jason\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only hosting
+[debug] [2022-08-28T00:01:56.857Z] CLI Version:   11.8.0
+[debug] [2022-08-28T00:01:56.857Z] Platform:      win32
+[debug] [2022-08-28T00:01:56.857Z] Node Version:  v18.8.0
+[debug] [2022-08-28T00:01:56.858Z] Time:          Sat Aug 27 2022 20:01:56 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-08-28T00:01:56.858Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-28T00:01:56.908Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-28T00:01:56.908Z] > authorizing via signed-in user (jasonyin30@gmail.com)
+[debug] [2022-08-28T00:01:56.909Z] [iam] checking project the-write-place-ea1e8 for permissions ["firebase.projects.get"]
+[debug] [2022-08-28T00:01:56.911Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-write-place-ea1e8:testIamPermissions [none]
+[debug] [2022-08-28T00:01:56.911Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-write-place-ea1e8:testIamPermissions x-goog-quota-user=projects/the-write-place-ea1e8
+[debug] [2022-08-28T00:01:56.912Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-write-place-ea1e8:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-08-28T00:01:57.129Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-write-place-ea1e8:testIamPermissions 200
+[debug] [2022-08-28T00:01:57.129Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-write-place-ea1e8:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-08-28T00:01:57.130Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8 [none]
+[debug] [2022-08-28T00:01:57.459Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8 200
+[debug] [2022-08-28T00:01:57.459Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8 {"projectId":"the-write-place-ea1e8","projectNumber":"144537031501","displayName":"The Write Place","name":"projects/the-write-place-ea1e8","resources":{"hostingSite":"the-write-place-ea1e8","storageBucket":"the-write-place-ea1e8.appspot.com","locationId":"us-east1"},"state":"ACTIVE","etag":"1_247b60b2-eb3f-49e2-8d49-6b4feb1e89f5"}
+[debug] [2022-08-28T00:01:57.461Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-write-place-ea1e8/sites 
+[debug] [2022-08-28T00:01:58.164Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-write-place-ea1e8/sites 200
+[debug] [2022-08-28T00:01:58.164Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-write-place-ea1e8/sites {"sites":[{"name":"projects/the-write-place-ea1e8/sites/the-write-place-ea1e8","defaultUrl":"https://the-write-place-ea1e8.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2022-08-28T00:01:58.164Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8/webApps/-/config [none]
+[debug] [2022-08-28T00:01:58.627Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8/webApps/-/config 200
+[debug] [2022-08-28T00:01:58.627Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-write-place-ea1e8/webApps/-/config {"projectId":"the-write-place-ea1e8","appId":"1:144537031501:web:381f1b2964a4e95c049d04","storageBucket":"the-write-place-ea1e8.appspot.com","locationId":"us-east1","apiKey":"AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc","authDomain":"the-write-place-ea1e8.firebaseapp.com","messagingSenderId":"144537031501","measurementId":"G-RFS3FW3HTE"}
+[warn] !  hosting: Port 5000 is not available. Trying another port... {"metadata":{"emulator":{"name":"hosting"},"message":"\u001b[33mhosting: \u001b[39mPort 5000 is not available. Trying another port..."}}
+[info] i  hosting: Serving hosting files from: dist {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mdist\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5005 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5005\u001b[22m\u001b[24m"}}
+[info] i  hosting: 127.0.0.1 - - [28/Aug/2022:00:02:06 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [28/Aug/2022:00:02:06 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36\""}}
