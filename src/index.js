@@ -27,29 +27,27 @@ const createAccount = async () => {
 
   try {
     await createUserWithEmailAndPassword(auth, email, password)
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/src/Profile");
   }
   catch(error) {
     console.log(`There was an error: ${error}`)
-    showLoginError(error)
+    //Toast.makeToast() but web version
   } 
 }
-//location.replace("https://thefluffynebula.github.io/The-Write-Place-Web-v1/Profile");
+
 // Login using email/password
 const loginEmailPassword = async () => {
   const loginEmail = editEmail.value
   const loginPassword = editPassword.value
 
-  // step 1: try doing this w/o error handling, and then add try/catch
-  await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-
-  // step 2: add error handling
-  // try {
-  //   await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-  // }
-  // catch(error) {
-  //   console.log(`There was an error: ${error}`)
-  //   showLoginError(error)
-  // }
+  try {
+    await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/src/Profile");
+  }
+  catch(error) {
+    console.log(`There was an error: ${error}`)
+    //Toast.makeToast() but web version
+  }
 }
 
 buttonSignIn.addEventListener("click",loginEmailPassword);
