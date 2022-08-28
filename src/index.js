@@ -1,3 +1,12 @@
+import './TWP.css';
+import {
+  editEmail,
+  editPassword,
+  editUsername,
+  buttonSignIn,
+  buttonRegister,
+  buttonResetPassword
+} from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 import {getFirestore} from 'firebase/firestore';
@@ -10,48 +19,43 @@ const firebaseApp = initializeApp({
     appId: "1:144537031501:web:381f1b2964a4e95c049d04",
     measurementId: "G-RFS3FW3HTE"
 })
-//Variables
-SignIn = document.getElementById("buttonSignIn");
-SignIn.addEventListener("click",onClickSignIn);
-Register = document.getElementById("buttonRegister");
-Register.addEventListener("click",onClickRegister);
-ResetPassword = document.getElementById("buttonResetPassword");
-ResetPassword.addEventListener("click",onClickResetPassword);
-editEmail = document.getElementById("editEmail");
-editUsername = document.getElementById("editUsername");
-editPassword = document.getElementById("editPassword");
+
+
+
+// Create new account using email/password
+const createAccount = async () => {
+  const email = txtEmail.value
+  const password = txtPassword.value
+
+  try {
+    await createUserWithEmailAndPassword(auth, email, password)
+  }
+  catch(error) {
+    console.log(`There was an error: ${error}`)
+    showLoginError(error)
+  } 
+}
+//location.replace("https://thefluffynebula.github.io/The-Write-Place-Web-v1/Profile");
+// Login using email/password
+const loginEmailPassword = async () => {
+  const loginEmail = txtEmail.value
+  const loginPassword = txtPassword.value
+
+  // step 1: try doing this w/o error handling, and then add try/catch
+  await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+
+  // step 2: add error handling
+  // try {
+  //   await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+  // }
+  // catch(error) {
+  //   console.log(`There was an error: ${error}`)
+  //   showLoginError(error)
+  // }
+}
+
+buttonSignIn.addEventListener("click",loginEmailPassword);
+buttonRegister.addEventListener("click",createAccount);
+//buttonResetPassword.addEventListener("click",onClickResetPassword);
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
-
-function onClickSignIn(){
-  email = editEmail.value;
-  password = editPassword.value;
-  signInWithEmailAndPassword(email, password);
-}
-function onClickRegister(){
-  email = editEmail.value;
-  username = editUsername.value;
-  password = editPassword.value;
-  createUserWithEmailAndPassword(email, password);
-}
-createUserWithEmailAndPassword(auth, email, password)
-.then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    location.replace("https://thefluffynebula.github.io/The-Write-Place-Web-v1/Profile");
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
-  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    location.replace("https://thefluffynebula.github.io/The-Write-Place-Web-v1/Profile");
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
