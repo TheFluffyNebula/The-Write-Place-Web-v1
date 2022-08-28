@@ -20,12 +20,10 @@ const firebaseApp = initializeApp({
     measurementId: "G-RFS3FW3HTE"
 })
 
-
-
 // Create new account using email/password
 const createAccount = async () => {
-  const email = txtEmail.value
-  const password = txtPassword.value
+  const email = editEmail.value
+  const password = editPassword.value
 
   try {
     await createUserWithEmailAndPassword(auth, email, password)
@@ -38,8 +36,8 @@ const createAccount = async () => {
 //location.replace("https://thefluffynebula.github.io/The-Write-Place-Web-v1/Profile");
 // Login using email/password
 const loginEmailPassword = async () => {
-  const loginEmail = txtEmail.value
-  const loginPassword = txtPassword.value
+  const loginEmail = editEmail.value
+  const loginPassword = editPassword.value
 
   // step 1: try doing this w/o error handling, and then add try/catch
   await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
