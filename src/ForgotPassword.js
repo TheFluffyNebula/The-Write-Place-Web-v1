@@ -18,7 +18,8 @@ const passReset = async() => {
     const email = editSendEmailTo.value;
     sendPasswordResetEmail(auth, email)
     .then(() => {
-      location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/src/Index");
+      console.log('passReset:success');
+      location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/src/index");
     })
     .catch((error) => {
       console.log('passReset:failure');
