@@ -3,15 +3,13 @@ import {
   editEmail,
   editPassword,
   editUsername,
-  editSendEmailTo,
   buttonSignIn,
   buttonRegister,
-  buttonResetPassword,
-  buttonSubmit,
+  buttonGoToResetPassword,
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
-  sendPasswordResetEmail} from 'firebase/auth';
+} from 'firebase/auth';
 import {getFirestore} from 'firebase/firestore';
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
@@ -60,7 +58,7 @@ const loginEmailPassword = async () => {
   }
 }
 
-const ResetPassword = async () => {
+const gotoResetPassword = async () => {
   location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/ForgotPassword");
 }
 
@@ -69,6 +67,6 @@ const ResetPassword = async () => {
 
 buttonSignIn.addEventListener("click",loginEmailPassword);
 buttonRegister.addEventListener("click",createAccount);
-buttonResetPassword.addEventListener("click",ResetPassword);
+buttonGoToResetPassword.addEventListener("click",gotoResetPassword);
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);

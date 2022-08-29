@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-let htmlPageNames = ['ForgotPassword'];
+let htmlPageNames = ['ForgotPassword','Profile','ChangePassword'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
     template: `./src/${name}.html`, // relative path to the HTML files
@@ -15,7 +15,10 @@ module.exports = {
   devtool: 'eval-source-map',
   entry:{
     index: './src/index.js',
-    ForgotPassword:'./src/ForgotPassword.js'
+    ForgotPassword:'./src/ForgotPassword.js',
+    Profile:'./src/Profile.js',
+    ChangePassword:'./src/ChangePassword.js',
+    
 },
     output: {
     path: path.resolve(__dirname, 'dist'),
