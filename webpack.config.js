@@ -1,13 +1,25 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+let htmlPageNames = ['ForgotPassword'];
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+  return new HtmlWebpackPlugin({
+    template: `./src/${name}.html`, // relative path to the HTML files
+    filename: `${name}.html`, // output HTML files
+    chunks: [`${name}`] // respective JS files
+  })
+});
+
 
 module.exports = {
   mode: 'development',
   devtool: 'eval-source-map',
-  entry: './src/index.js',
-  output: {
+  entry:{
+    index: './src/index.js',
+    ForgotPassword:'./src/ForgotPassword.js'
+},
+    output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
   watch: true,
   module: {
@@ -23,12 +35,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './src/index.html'
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'ForgotPassword.html',
-      timplate: '.src/ForgotPassword.html'
+      template: './src/index.html',
+      chunks: ["index"],
     })
-  ],
+  ].concat(multipleHtmlPlugins)
 }

@@ -64,22 +64,11 @@ const ResetPassword = async () => {
   location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/src/ForgotPassword");
 }
 
-const passReset = async() => {
-  const email = editSendEmailTo.value;
-  sendPasswordResetEmail(auth, email)
-  .then(() => {
-    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/src/Login");
-  })
-  .catch((error) => {
-    console.log('passReset:failure');
-    //Toast.makeToast() but web version
-  });
-}
+
 
 
 buttonSignIn.addEventListener("click",loginEmailPassword);
 buttonRegister.addEventListener("click",createAccount);
 buttonResetPassword.addEventListener("click",ResetPassword);
-// buttonSubmit.addEventListener("click",passReset);
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
