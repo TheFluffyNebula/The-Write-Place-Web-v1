@@ -61,7 +61,7 @@ const loginEmailPassword = async () => {
 }
 
 const ResetPassword = async () => {
-  location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/src/ForgotPassword");
+  location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/ForgotPassword");
 }
 
 
