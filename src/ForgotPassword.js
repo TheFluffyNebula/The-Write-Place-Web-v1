@@ -1,4 +1,5 @@
 import './TWP.css';
+import Toast from './toast.js'
 import {
   editSendEmailTo,
   buttonFPSubmit,
@@ -19,11 +20,12 @@ const passReset = async() => {
     sendPasswordResetEmail(auth, email)
     .then(() => {
       console.log('passReset:success');
+      Toast('passReset:success');
       location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/index");
     })
     .catch((error) => {
       console.log('passReset:failure');
-      //Toast.makeToast() but web version
+      Toast('passReset:failure');
     });
   }
 buttonFPSubmit.addEventListener("click",passReset);

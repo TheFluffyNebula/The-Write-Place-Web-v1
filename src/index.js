@@ -1,4 +1,5 @@
 import './TWP.css';
+import Toast from './toast.js'
 import {
   editEmail,
   editPassword,
@@ -10,7 +11,7 @@ import {
 import {initializeApp} from 'firebase/app';
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
 } from 'firebase/auth';
-import {getFirestore} from 'firebase/firestore';
+import {getFirestore, limitToLast} from 'firebase/firestore';
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
     authDomain: "the-write-place-ea1e8.firebaseapp.com",
@@ -31,16 +32,15 @@ const createAccount = async () => {
     updateProfile(auth.currentUser, {
       displayName: username
     }).then(() => {
-      // Profile updated!
+      Toast('Account Created!');
       location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
     }).catch((error) => {
-      //Toast.makeToast but web version
       console.log('updateProfile:failure');
+      Toast('createAccount:failure');
     });
   }
   catch(error) {
     console.log(`createUsernameWithEmailAndPassword:failure`);
-    //Toast.makeToast() but web version
   } 
 }
 
@@ -53,8 +53,9 @@ const loginEmailPassword = async () => {
     location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   catch(error) {
+    Toast('Authentication Failed');
     console.log('loginEmailPassword:failure');
-    //Toast.makeToast() but web version
+    
   }
 }
 
