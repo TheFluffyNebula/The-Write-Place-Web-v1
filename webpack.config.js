@@ -23,7 +23,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: './src/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'ForgotPassword.html',
+      timplate: '.src/ForgotPassword.html'
     })
   ],
 }

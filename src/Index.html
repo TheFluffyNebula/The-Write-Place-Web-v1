@@ -8,17 +8,21 @@
 </head>
 <body>
     <img id="TWPLogo" src="../images/the_write_place.png" alt="The Write Place" title="The Write Place">
-    <button class="Login" id="buttonSignIn">Sign In</button>
-    <button class="Login" id="buttonRegister">Register</button>
-    <button class="Login" id="buttonResetPassword">Reset Password</button>
-    <label>Email
-        <input type="email" class="Login" id="editEmail">
-    </label>
-    <label>Username
-    <input type="text" class="Login" id="editUsername">
-    </label>
-    <label>Password
-    <input type="password" class="Login" id="editPassword">
-    </label>
+    <div class="LoginFields">
+        <label>Email
+            <input type="email" class="LoginEdit" id="editEmail">
+        </label>
+        <label>Username
+        <input type="text" class="LoginEdit" id="editUsername">
+        </label>
+        <label>Password
+        <input type="password" class="LoginEdit" id="editPassword">
+        </label>
+    </div>
+    <div class="LoginButtons">
+        <button class="Login" id="buttonSignIn">Sign In</button>
+        Don't have an account? <button class="Login" id="buttonRegister">Register</button>
+        <button class="Login" id="buttonResetPassword">Forgot Password?</button>
+    </div>
 </body>
 </html>

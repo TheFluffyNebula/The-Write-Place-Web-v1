@@ -1,8 +1,35 @@
 body{
     color:black;
+    background-color: lightgreen;
 }
 button.Login{
     color: white;
     background-color:rgb(128,214,255);
     width: fit-content;
+    border: 2px dotted purple;
+}
+/* figure out how to make it scale properly */
+div.LoginButtons{
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    margin-top: 10%;
+}
+input.LoginEdit{
+    background-color: orange;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+div.LoginFields{
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+}
+img#TWPLogo{
+    float: left;
+    width: 50%;
 }
