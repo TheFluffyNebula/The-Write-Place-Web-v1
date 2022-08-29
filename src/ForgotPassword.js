@@ -1,7 +1,7 @@
 import './TWP.css';
 import {
   editSendEmailTo,
-  buttonSubmit,
+  buttonFPSubmit,
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, sendPasswordResetEmail} from 'firebase/auth';
@@ -26,5 +26,5 @@ const passReset = async() => {
       //Toast.makeToast() but web version
     });
   }
-buttonSubmit.addEventListener("click",passReset);
+buttonFPSubmit.addEventListener("click",passReset);
 const auth = getAuth(firebaseApp);

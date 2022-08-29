@@ -32,7 +32,7 @@ const createAccount = async () => {
       displayName: username
     }).then(() => {
       // Profile updated!
-      location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/src/Profile");
+      location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
     }).catch((error) => {
       //Toast.makeToast but web version
       console.log('updateProfile:failure');
@@ -50,7 +50,7 @@ const loginEmailPassword = async () => {
   const loginPassword = editPassword.value;
   try {
     await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/src/Profile");
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   catch(error) {
     console.log('loginEmailPassword:failure');
