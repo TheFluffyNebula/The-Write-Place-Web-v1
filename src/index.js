@@ -27,7 +27,7 @@ const createAccount = async () => {
   const password = editPassword.value;
   const username = editUsername.value;
   try {
-    await createUserWithEmailAndPassword(auth, email, password)
+    await createUserWithEmailAndPassword(auth, email, password, username)
     .then(() => {
       updateProfile(auth.currentUser, {
         email: email, displayName: username,

@@ -24,6 +24,7 @@ const ChangePassword = async() =>{
         updatePassword(user, confirmPassword).then(() => {
             console.log('ChangePassword:success');
             console.log(user.email);
+            console.log(user.displayName);
             location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
           }).catch((error) => {
             console.log('ChangePassword:failure');
