@@ -20,7 +20,7 @@ const ChangePassword = async() =>{
     const securePassword = editSecurePassword.value;
     const confirmPassword = editConfirmPassword.value;
     if (securePassword==confirmPassword){
-        updatePassword(user, confirmPassword).then(() => {
+        updatePassword(user, confirmPassword).then(() => {//remove equal sign?
             console.log('ChangePassword:success')
             location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
           }).catch((error) => {
@@ -28,7 +28,6 @@ const ChangePassword = async() =>{
           });
     }
     else{
-        alert(nay)
         console.log('ChangePassword:fields do not match');
     }
 }

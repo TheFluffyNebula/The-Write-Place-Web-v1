@@ -4,7 +4,7 @@ import {
   buttonSignOut,
 } from './ui'
 import {initializeApp} from 'firebase/app';
-import {signOut} from 'firebase/auth';
+import {getAuth, signOut} from 'firebase/auth';
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
     authDomain: "the-write-place-ea1e8.firebaseapp.com",

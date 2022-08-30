@@ -2,7 +2,7 @@ export const editEmail = document.querySelector('#editEmail') //Login
 export const editPassword = document.querySelector('#editPassword') //Login
 export const editUsername = document.querySelector("#editUsername") //Login
 export const editSendEmailTo = document.querySelector("#editSendEmailTo") //ForgotPassword
-export const editSecurePassword = document.querySelector('#editSecurePasswod') //ChangePassword
+export const editSecurePassword = document.querySelector('#editSecurePassword') //ChangePassword
 export const editConfirmPassword = document.querySelector('#editConfirmPassword') //ChangePassword
 
 export const buttonSignIn = document.querySelector('#buttonSignIn') //Login
