@@ -30,7 +30,7 @@ const createAccount = async () => {
     await createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
       updateProfile(auth.currentUser, {
-        displayName: username
+        email: email, displayName: username,
       })
       location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
     }).catch((error) => {
