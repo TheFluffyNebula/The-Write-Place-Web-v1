@@ -1,5 +1,4 @@
 import './TWP.css';
-import Toast from './toast.js'
 import {
   editSecurePassword,
   editConfirmPassword,
@@ -23,17 +22,14 @@ const ChangePassword = async() =>{
     if (securePassword==confirmPassword){
         updatePassword(user, confirmPassword).then(() => {
             console.log('ChangePassword:success')
-            Toast('ChangePassword:success')
             location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
           }).catch((error) => {
             console.log('ChangePassword:failure');
-            Toast('ChangePassword:failure');
           });
     }
     else{
         alert(nay)
         console.log('ChangePassword:fields do not match');
-        Toast('Fields do not match');
     }
 }
 

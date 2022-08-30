@@ -1,5 +1,4 @@
 import './TWP.css';
-import Toast from './toast.js'
 import {
   buttonGoToChangePassword,
   buttonSignOut,

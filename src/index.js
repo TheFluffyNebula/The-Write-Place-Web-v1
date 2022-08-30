@@ -1,5 +1,4 @@
 import './TWP.css';
-import Toast from './toast.js'
 import {
   editEmail,
   editPassword,
@@ -32,11 +31,9 @@ const createAccount = async () => {
     updateProfile(auth.currentUser, {
       displayName: username
     }).then(() => {
-      Toast('Account Created!');
       location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
     }).catch((error) => {
       console.log('updateProfile:failure');
-      Toast('createAccount:failure');
     });
   }
   catch(error) {
@@ -53,7 +50,6 @@ const loginEmailPassword = async () => {
     location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   catch(error) {
-    Toast('Authentication Failed');
     console.log('loginEmailPassword:failure');
     
   }
