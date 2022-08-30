@@ -31,7 +31,6 @@ const gotoChangePassword = async () => {
   }
 
 const displayUsernameAndEmail = async () => {
-  const user = auth.currentUser;
   const displayName = user.displayName;
   const email = user.email;
   textUserUsername.innerHTML = "Username:"+String(displayName);
@@ -39,11 +38,12 @@ const displayUsernameAndEmail = async () => {
 }
 
 const auth = getAuth(firebaseApp);
+const user = auth.currentUser;
 buttonSignOut.addEventListener("click",Sign_Out);
 buttonGoToChangePassword.addEventListener("click",gotoChangePassword);
 console.log(auth);
-console.log(auth.currentUser);
-if (auth.currentUser!=null) {
+console.log(user);
+if (user) {
   displayUsernameAndEmail(); //user is signed in
 }
 else {
