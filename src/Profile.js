@@ -2,6 +2,8 @@ import './TWP.css';
 import {
   buttonGoToChangePassword,
   buttonSignOut,
+  textUserUsername,
+  textUserEmail,
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, signOut} from 'firebase/auth';
@@ -22,12 +24,21 @@ const Sign_Out = async () => {
     }).catch((error) => {
     console.log('SignOut:failure');
     });
-
 }
 
 const gotoChangePassword = async () => {
     location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/ChangePassword");
   }
+
+function displayUsernameAndEmail(){
+  const user = auth.currentUser;
+  const displayName = user.displayName;
+  const email = user.email;
+  textUserUsername.innerHTML = "Username:"+String(displayName);
+  textUserEmail.innerHTML = "Email:"+String(email);
+}
+
+displayUsernameAndEmail();
 buttonSignOut.addEventListener("click",Sign_Out);
 buttonGoToChangePassword.addEventListener("click",gotoChangePassword);
 const auth = getAuth(firebaseApp);

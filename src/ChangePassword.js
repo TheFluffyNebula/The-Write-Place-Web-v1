@@ -21,7 +21,7 @@ const ChangePassword = async() =>{
     const confirmPassword = editConfirmPassword.value;
     if (securePassword==confirmPassword){
       const user = auth.currentUser;
-        updatePassword(user, confirmPassword).then(() => {//remove equal sign?
+        updatePassword(user, confirmPassword).then(() => {
             console.log('ChangePassword:success')
             location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
           }).catch((error) => {
