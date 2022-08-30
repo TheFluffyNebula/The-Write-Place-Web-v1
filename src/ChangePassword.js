@@ -21,6 +21,7 @@ const ChangePassword = async() =>{
     const confirmPassword = editConfirmPassword.value;
     if (securePassword==confirmPassword){
       const user = auth.currentUser;
+      console.log(auth.currentUser);
         updatePassword(user, confirmPassword).then(() => {
             console.log('ChangePassword:success');
             console.log(user.displayName);
