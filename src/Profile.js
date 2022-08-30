@@ -30,7 +30,7 @@ const gotoChangePassword = async () => {
     location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/ChangePassword");
   }
 
-function displayUsernameAndEmail(){
+const displayUsernameAndEmail = async () => {
   const user = auth.currentUser;
   const displayName = user.displayName;
   const email = user.email;
@@ -39,6 +39,11 @@ function displayUsernameAndEmail(){
 }
 
 const auth = getAuth(firebaseApp);
-displayUsernameAndEmail();
 buttonSignOut.addEventListener("click",Sign_Out);
 buttonGoToChangePassword.addEventListener("click",gotoChangePassword);
+if (auth.currentUser!=null) {
+  displayUsernameAndEmail(); //user is signed in
+}
+else {
+  console.log('No one is logged in');
+}

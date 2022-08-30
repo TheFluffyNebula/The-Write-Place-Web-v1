@@ -23,21 +23,22 @@ const firebaseApp = initializeApp({
 
 // Create new account using email/password
 const createAccount = async () => {
-  const email = editEmail.value
-  const password = editPassword.value
-  const username = editUsername.value
+  const email = editEmail.value;
+  const password = editPassword.value;
+  const username = editUsername.value;
   try {
     await createUserWithEmailAndPassword(auth, email, password)
-    updateProfile(auth.currentUser, {
-      displayName: username
-    }).then(() => {
+    .then(() => {
+      updateProfile(auth.currentUser, {
+        displayName: username
+      })
       location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
     }).catch((error) => {
       console.log('updateProfile:failure');
     });
   }
   catch(error) {
-    console.log(`createUsernameWithEmailAndPassword:failure`);
+    console.log(`createAccount:failure`);
   } 
 }
 
