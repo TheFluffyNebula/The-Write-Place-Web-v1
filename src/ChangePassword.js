@@ -20,6 +20,7 @@ const ChangePassword = async() =>{
     const securePassword = editSecurePassword.value;
     const confirmPassword = editConfirmPassword.value;
     if (securePassword==confirmPassword){
+      const user = auth.currentUser;
         updatePassword(user, confirmPassword).then(() => {//remove equal sign?
             console.log('ChangePassword:success')
             location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
@@ -34,4 +35,3 @@ const ChangePassword = async() =>{
 
 buttonCPSubmit.addEventListener("click",ChangePassword)
 const auth = getAuth(firebaseApp);
-const user = auth.currentUser;
