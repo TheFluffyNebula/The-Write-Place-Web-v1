@@ -41,6 +41,8 @@ const displayUsernameAndEmail = async () => {
 const auth = getAuth(firebaseApp);
 buttonSignOut.addEventListener("click",Sign_Out);
 buttonGoToChangePassword.addEventListener("click",gotoChangePassword);
+console.log(auth);
+console.log(auth.currentUser);
 if (auth.currentUser!=null) {
   displayUsernameAndEmail(); //user is signed in
 }

@@ -10,7 +10,7 @@ import {
 import {initializeApp} from 'firebase/app';
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
 } from 'firebase/auth';
-import {getFirestore, limitToLast} from 'firebase/firestore';
+import {getFirestore,} from 'firebase/firestore';
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
     authDomain: "the-write-place-ea1e8.firebaseapp.com",
@@ -27,7 +27,7 @@ const createAccount = async () => {
   const password = editPassword.value;
   const username = editUsername.value;
   try {
-    await createUserWithEmailAndPassword(auth, email, password, username)
+    await createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
       updateProfile(auth.currentUser, {
         email: email, displayName: username,
