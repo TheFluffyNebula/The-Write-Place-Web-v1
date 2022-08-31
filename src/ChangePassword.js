@@ -5,7 +5,7 @@ import {
   buttonCPSubmit,
 } from './ui'
 import {initializeApp} from 'firebase/app';
-import {getAuth, updateCurrentUser, updatePassword} from 'firebase/auth';
+import {getAuth, updatePassword} from 'firebase/auth';
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
     authDomain: "the-write-place-ea1e8.firebaseapp.com",
@@ -24,9 +24,7 @@ const ChangePassword = async() =>{
       console.log(auth.currentUser);
         updatePassword(user, confirmPassword).then(() => {
             console.log('ChangePassword:success');
-            console.log(user.displayName);
-            console.log(user.email);
-            //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
+            location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
           }).catch((error) => {
             console.log('ChangePassword:failure');
           });

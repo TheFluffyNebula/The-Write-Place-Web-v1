@@ -12,6 +12,7 @@ export const buttonGoToResetPassword = document.querySelector('#buttonGoToResetP
 export const buttonFPSubmit = document.querySelector('#buttonFPSubmit') //ForgotPassword
 export const buttonGoToChangePassword = document.querySelector('#buttonGoToChangePassword') //Profile
 export const buttonSignOut = document.querySelector('#buttonSignOut') //Profile
+export const buttonDisplayProfile = document.querySelector('#buttonDisplayProfile') //Profile
 export const buttonCPSubmit = document.querySelector('#buttonCPSubmit') //ChangePassword
 //regular text
 export const textUserUsername = document.querySelector('#userUsername') //Profile

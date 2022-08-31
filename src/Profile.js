@@ -2,6 +2,7 @@ import './TWP.css';
 import {
   buttonGoToChangePassword,
   buttonSignOut,
+  buttonDisplayProfile,
   textUserUsername,
   textUserEmail,
 } from './ui'
@@ -41,11 +42,4 @@ const auth = getAuth(firebaseApp);
 const user = auth.currentUser;
 buttonSignOut.addEventListener("click",Sign_Out);
 buttonGoToChangePassword.addEventListener("click",gotoChangePassword);
-console.log(auth);
-console.log(user);
-if (user) {
-  displayUsernameAndEmail(); //user is signed in
-}
-else {
-  console.log('No one is logged in');
-}
+buttonDisplayProfile.addEventListener("click",displayUsernameAndEmail);
