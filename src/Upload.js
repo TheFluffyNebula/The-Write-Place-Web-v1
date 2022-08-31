@@ -5,7 +5,7 @@ import {
     buttonUploadDocument,
 } from './ui'
 import {initializeApp} from 'firebase/app';
-//import {getAuth, signOut} from 'firebase/auth';
+import {getAuth, } from 'firebase/auth';
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
@@ -17,12 +17,18 @@ const firebaseApp = initializeApp({
     measurementId: "G-RFS3FW3HTE"
 })
 const createDocument = async () => {
+    const user = auth.currentUser;
+    const displayName = user.displayName;
     documentName = editUploadDocumentName.value;
     documentUrl = editUploadDocumentUrl.value;
     await setDoc(doc(db, "ECG", documentName), {
+        complete: false, //still need current date parameter
+        reviewer: null,
+        submitter: displayName,
         url: documentUrl,
       });
 
 }
 buttonUploadDocument.addEventListener("click",createDocument);
-const db = getFirestore(app);
+const auth = getAuth(firebaseApp);
+const db = getFirestore(firebaseApp);
