@@ -18,7 +18,6 @@ const firebaseApp = initializeApp({
 })
 const createDocument = async () => {
     var now = new Date();
-    now.format("mm/dd/yyyy");
     const user = auth.currentUser;
     const displayName = user.displayName;
     const documentName = editUploadDocumentName.value;
