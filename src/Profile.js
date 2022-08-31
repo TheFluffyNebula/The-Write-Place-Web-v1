@@ -3,6 +3,7 @@ import {
   buttonGoToChangePassword,
   buttonSignOut,
   buttonDisplayProfile,
+  buttonGoToUpload,
   textUserUsername,
   textUserEmail,
 } from './ui'
@@ -31,6 +32,10 @@ const gotoChangePassword = async () => {
     location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/ChangePassword");
   }
 
+const gotoUpload = async () => {
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Upload");
+  }
+
 const displayUsernameAndEmail = async () => {
   const user = auth.currentUser;
   console.log(auth);
@@ -43,5 +48,6 @@ const displayUsernameAndEmail = async () => {
 
 buttonSignOut.addEventListener("click",Sign_Out);
 buttonGoToChangePassword.addEventListener("click",gotoChangePassword);
+buttonGoToUpload.addEventListener("click",gotoUpload);
 buttonDisplayProfile.addEventListener("click",displayUsernameAndEmail);
 const auth = getAuth(firebaseApp);
