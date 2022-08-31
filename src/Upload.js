@@ -17,12 +17,15 @@ const firebaseApp = initializeApp({
     measurementId: "G-RFS3FW3HTE"
 })
 const createDocument = async () => {
+    var now = new Date();
+    now.format("mm/dd/yyyy");
     const user = auth.currentUser;
     const displayName = user.displayName;
     const documentName = editUploadDocumentName.value;
     const documentUrl = editUploadDocumentUrl.value;
     await setDoc(doc(db, "ECG", documentName), {
-        complete: false, //still need current date parameter
+        complete: false,
+        date: now,
         reviewer: null,
         submitter: displayName,
         url: documentUrl,
