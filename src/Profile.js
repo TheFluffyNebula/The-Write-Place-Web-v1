@@ -38,8 +38,6 @@ const gotoUpload = async () => {
 
 const displayUsernameAndEmail = async () => {
   const user = auth.currentUser;
-  console.log(auth);
-  console.log(user);
   const displayName = user.displayName;
   const email = user.email;
   textUserUsername.innerHTML = "Username:"+String(displayName);

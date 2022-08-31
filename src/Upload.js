@@ -19,8 +19,8 @@ const firebaseApp = initializeApp({
 const createDocument = async () => {
     const user = auth.currentUser;
     const displayName = user.displayName;
-    documentName = editUploadDocumentName.value;
-    documentUrl = editUploadDocumentUrl.value;
+    const documentName = editUploadDocumentName.value;
+    const documentUrl = editUploadDocumentUrl.value;
     await setDoc(doc(db, "ECG", documentName), {
         complete: false, //still need current date parameter
         reviewer: null,
