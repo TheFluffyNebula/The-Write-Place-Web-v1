@@ -14,7 +14,7 @@ const firebaseApp = initializeApp({
     appId: "1:144537031501:web:381f1b2964a4e95c049d04",
     measurementId: "G-RFS3FW3HTE"
 })
-loadOtherEssays = async () =>{
+const loadOtherEssays = async () =>{
     const user = auth.currentUser;
     username = user.displayName;
     const citiesRef = collection(db, "ECG");
