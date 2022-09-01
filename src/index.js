@@ -5,7 +5,6 @@ import {
   editUsername,
   buttonSignIn,
   buttonRegister,
-  buttonGoToResetPassword,
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
@@ -56,15 +55,9 @@ const loginEmailPassword = async () => {
   }
 }
 
-const gotoResetPassword = async () => {
-  location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/ForgotPassword");
-}
-
-
 
 
 buttonSignIn.addEventListener("click",loginEmailPassword);
 buttonRegister.addEventListener("click",createAccount);
-buttonGoToResetPassword.addEventListener("click",gotoResetPassword);
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
