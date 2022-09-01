@@ -24,4 +24,4 @@ async function loadOtherEssays(){
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
 //loadOtherEssays();
-setTimeout(loadOtherEssays,1000);
+setTimeout(loadOtherEssays,500);
