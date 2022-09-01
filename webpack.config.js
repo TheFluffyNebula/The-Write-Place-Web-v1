@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-let htmlPageNames = ['ForgotPassword','Profile','ChangePassword','Upload','ToReviewList',];
+let htmlPageNames = ['ForgotPassword','Profile','ChangePassword','Upload','ToReviewList','OtherEssays'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
     template: `./src/${name}.html`, // relative path to the HTML files
@@ -20,6 +20,7 @@ module.exports = {
     ChangePassword:'./src/ChangePassword.js',
     Upload:'./src/Upload.js',
     ToReviewList:'./src/ToReviewList.js',
+    OtherEssays:'./src/OtherEssays.js',
     
 },
     output: {
