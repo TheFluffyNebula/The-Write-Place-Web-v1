@@ -33,3 +33,15 @@ img#TWPLogo{
     float: left;
     width: 50%;
 }
+div.NavBar{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    /*fix navbar at top of viewport*/
+    position: fixed;
+    bottom: 5%;
+}
+div.ProfileNav{
+    width: 30%;
+    text-align: center;
+}

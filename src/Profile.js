@@ -2,8 +2,6 @@ import './TWP.css';
 import {
   buttonSignOut,
   buttonDisplayProfile,
-  buttonGoToUpload,
-  buttonGoToOtherEssays,
   textUserUsername,
   textUserEmail,
 } from './ui'
