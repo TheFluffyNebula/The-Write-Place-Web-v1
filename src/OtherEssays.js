@@ -18,7 +18,7 @@ async function loadOtherEssays(){
     const user = auth.currentUser;
     username = user.displayName;
     const citiesRef = collection(db, "ECG");
-    const q = query(citiesRef, where("submitter", "!=", username));
+    const q = query(citiesRef, where("submitter", "!=", username),limit(3));
     console.log(user);
     console.log(username);
     console.log(citiesRef);
@@ -26,5 +26,5 @@ async function loadOtherEssays(){
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
-//loadOtherEssays();
+//loadOtherEssays(); check DOMContentLoaded?
 setTimeout(loadOtherEssays,3000);

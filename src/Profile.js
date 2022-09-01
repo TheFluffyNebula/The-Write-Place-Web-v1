@@ -35,5 +35,6 @@ const displayUsernameAndEmail = async () => {
 }
 
 buttonSignOut.addEventListener("click",Sign_Out);
-buttonDisplayProfile.addEventListener("click",displayUsernameAndEmail);
+//buttonDisplayProfile.addEventListener("click",displayUsernameAndEmail);
+document.addEventListener("DOMContentLoaded",displayUsernameAndEmail);
 const auth = getAuth(firebaseApp);
