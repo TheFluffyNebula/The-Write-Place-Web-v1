@@ -34,7 +34,7 @@ function displayUsernameAndEmail(){
   textUserEmail.innerHTML = "Email:"+String(email);
 }
 
+const auth = getAuth(firebaseApp);
 buttonSignOut.addEventListener("click",Sign_Out);
 buttonDisplayProfile.addEventListener("click",displayUsernameAndEmail);
 buttonDisplayProfile.click();
-const auth = getAuth(firebaseApp);
