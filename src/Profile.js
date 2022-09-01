@@ -38,4 +38,4 @@ const auth = getAuth(firebaseApp);
 buttonSignOut.addEventListener("click",Sign_Out);
 //displayUsernameAndEmail();
 //buttonDisplayProfile.addEventListener("click",displayUsernameAndEmail);
-setTimeout(displayUsernameAndEmail,3000);
+setTimeout(displayUsernameAndEmail,1000);

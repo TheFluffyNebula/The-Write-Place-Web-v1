@@ -19,11 +19,9 @@ async function loadOtherEssays(){
     var username = user.displayName;
     const docRef = collection(db,"ECG")
     const tagQuery = query(docRef, where("submitter", "!=", username),limit(3));
-    console.log(user);
-    console.log(username);
     console.log(tagQuery);
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
 //loadOtherEssays();
-setTimeout(loadOtherEssays,3000);
+setTimeout(loadOtherEssays,1000);
