@@ -29,7 +29,6 @@ const Sign_Out = async () => {
 async function displayUsernameAndEmail(){
   const user = auth.currentUser;
   var displayName = user.displayName;
-  console.log(displayName);
   const email = user.email;
   textUserUsername.innerHTML = "Username:"+String(displayName);
   textUserEmail.innerHTML = "Email:"+String(email);

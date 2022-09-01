@@ -17,7 +17,8 @@ const firebaseApp = initializeApp({
 async function loadOtherEssays(){
     const user = auth.currentUser;
     var username = user.displayName;
-    const tagQuery = collection(db,"ECG").query(where("submitter", "!=", username),limit(3));
+    const docRef = collection(db,"ECG")
+    const tagQuery = query(docRef, where("submitter", "!=", username),limit(3));
     console.log(user);
     console.log(username);
     console.log(tagQuery);
