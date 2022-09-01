@@ -12,7 +12,6 @@ export const buttonSignIn = document.querySelector('#buttonSignIn') //Login
 export const buttonRegister = document.querySelector('#buttonRegister') //Login
 export const buttonFPSubmit = document.querySelector('#buttonFPSubmit') //ForgotPassword
 export const buttonSignOut = document.querySelector('#buttonSignOut') //Profile
-export const buttonDisplayProfile = document.querySelector('#buttonDisplayProfile') //Profile
 export const buttonCPSubmit = document.querySelector('#buttonCPSubmit') //ChangePassword
 export const buttonUploadDocument = document.querySelector('#buttonUploadDocument') //Upload
 //regular text

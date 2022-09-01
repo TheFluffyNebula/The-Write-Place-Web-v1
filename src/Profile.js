@@ -1,7 +1,6 @@
 import './TWP.css';
 import {
   buttonSignOut,
-  buttonDisplayProfile,
   textUserUsername,
   textUserEmail,
 } from './ui'
@@ -36,6 +35,4 @@ async function displayUsernameAndEmail(){
 
 const auth = getAuth(firebaseApp);
 buttonSignOut.addEventListener("click",Sign_Out);
-//displayUsernameAndEmail();
-//buttonDisplayProfile.addEventListener("click",displayUsernameAndEmail);
 setTimeout(displayUsernameAndEmail,500);
