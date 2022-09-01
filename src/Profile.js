@@ -26,7 +26,7 @@ const Sign_Out = async () => {
     });
 }
 
-function displayUsernameAndEmail(){
+const displayUsernameAndEmail = async () => {
   const user = auth.currentUser;
   const displayName = user.displayName;
   const email = user.email;
