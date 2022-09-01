@@ -21,6 +21,12 @@ async function loadOtherEssays(){
     const tagQuery = query(docRef, where("submitter", "!=", username),limit(3));
     const tagQuerySnapshot = await getDocs(tagQuery);
     console.log(tagQuery);
+    console.log(tagQuerySnapshot);
+    tagQuerySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+      });
+    
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
