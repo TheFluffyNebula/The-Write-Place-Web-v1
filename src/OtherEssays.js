@@ -4,7 +4,7 @@ import {
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, } from 'firebase/auth';
-import { getFirestore, collection, query, where, limit} from "firebase/firestore"; //updateDoc vs setDoc to not fully replace
+import { getFirestore, getDocs, collection, query, where, limit} from "firebase/firestore"; //updateDoc vs setDoc to not fully replace
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
     authDomain: "the-write-place-ea1e8.firebaseapp.com",
@@ -19,6 +19,7 @@ async function loadOtherEssays(){
     var username = user.displayName;
     const docRef = collection(db,"ECG")
     const tagQuery = query(docRef, where("submitter", "!=", username),limit(3));
+    const tagQuerySnapshot = await getDocs(tagQuery);
     console.log(tagQuery);
 }
 const auth = getAuth(firebaseApp);
