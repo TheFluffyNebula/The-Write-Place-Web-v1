@@ -25,13 +25,15 @@ async function loadOtherEssays(){
     tagQuerySnapshot.forEach((doc) => {
         var dd = doc.data();
         var element = essays[i];
-        element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter) //ask about href formatting
+        element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter) //dialog into href
+        element.addEventListener("click",onClickElement);
         i+=1
         //console.log(doc.id, " => ", doc.data());
-        //console.log(dd.submitter);
         //id is docName, other attributes are their field name in the db
       });
-    
+}
+async function onClickElement(event){
+  console.log(event.currentTarget);
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
