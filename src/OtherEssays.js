@@ -20,12 +20,16 @@ async function loadOtherEssays(){
     const docRef = collection(db,"ECG")
     const tagQuery = query(docRef, where("submitter", "!=", username),limit(3));
     const tagQuerySnapshot = await getDocs(tagQuery);
+    const essays = [EO1,EO2,EO3];
+    var i = 1
     tagQuerySnapshot.forEach((doc) => {
-        var dd = doc.data()
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-        console.log(dd.submitter);
-        //doc.id is docName
+        var dd = doc.data();
+        var element = essays[i];
+        element.innerHTML = String(doc.id)<br>String(dd.submitter)
+        i+=1
+        //console.log(doc.id, " => ", doc.data());
+        //console.log(dd.submitter);
+        //id is docName, other attributes are their field name in the db
       });
     
 }
