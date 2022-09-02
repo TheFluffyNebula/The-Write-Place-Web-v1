@@ -37,11 +37,21 @@ div.NavBar{
     display: flex;
     width: 100%;
     justify-content: space-around;
-    /*fix navbar at top of viewport*/
+    /*fix navbar at bottom of viewport*/
     position: fixed;
     bottom: 5%;
 }
 div.ProfileNav{
     width: 30%;
     text-align: center;
+}
+div.OtherEssays{
+    display:flex;
+    width:90%;
+    justify-content:space-around;
+    position: fixed;
+    margin-left: 5%;
+    margin-right: 5%;
+    top:50%;
+
 }

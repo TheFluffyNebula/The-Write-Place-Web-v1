@@ -1,6 +1,6 @@
 import './TWP.css';
 import {
-  
+  EO1,EO2,EO3,
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, } from 'firebase/auth';

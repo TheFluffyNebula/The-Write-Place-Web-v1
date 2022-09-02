@@ -7,6 +7,10 @@ export const editSecurePassword = document.querySelector('#editSecurePassword') 
 export const editConfirmPassword = document.querySelector('#editConfirmPassword') //ChangePassword
 export const editUploadDocumentName = document.querySelector('#editUploadDocumentName') //Upload
 export const editUploadDocumentUrl = document.querySelector('#editUploadDocumentUrl') //Upload
+export const EO1 = document.querySelector('#EO1') //OtherEssays
+export const EO2 = document.querySelector('#EO2') //OtherEssays
+export const EO3 = document.querySelector('#EO3') //OtherEssays
+
 //buttons
 export const buttonSignIn = document.querySelector('#buttonSignIn') //Login
 export const buttonRegister = document.querySelector('#buttonRegister') //Login
