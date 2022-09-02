@@ -20,11 +20,12 @@ async function loadOtherEssays(){
     const docRef = collection(db,"ECG")
     const tagQuery = query(docRef, where("submitter", "!=", username),limit(3));
     const tagQuerySnapshot = await getDocs(tagQuery);
-    console.log(tagQuery);
-    console.log(tagQuerySnapshot);
     tagQuerySnapshot.forEach((doc) => {
+        var dd = doc.data()
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
+        console.log(dd.submitter);
+        //doc.id is docName
       });
     
 }
