@@ -25,7 +25,7 @@ async function loadOtherEssays(){
     tagQuerySnapshot.forEach((doc) => {
         var dd = doc.data();
         var element = essays[i];
-        element.innerHTML = String(doc.id)<br>String(dd.submitter)
+        element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter)
         i+=1
         //console.log(doc.id, " => ", doc.data());
         //console.log(dd.submitter);
