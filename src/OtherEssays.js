@@ -21,7 +21,7 @@ async function loadOtherEssays(){
     const tagQuery = query(docRef, where("submitter", "!=", username),limit(3));
     const tagQuerySnapshot = await getDocs(tagQuery);
     const essays = [EO1,EO2,EO3];
-    var i = 1
+    var i = 0
     tagQuerySnapshot.forEach((doc) => {
         var dd = doc.data();
         var element = essays[i];
