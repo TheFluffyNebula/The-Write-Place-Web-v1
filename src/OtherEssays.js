@@ -4,7 +4,7 @@ import {
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, } from 'firebase/auth';
-import { getFirestore, getDocs, collection, query, where, limit, updateDoc} from "firebase/firestore";
+import { getFirestore, getDoc, getDocs, collection, query, where, limit, updateDoc} from "firebase/firestore";
 //updateDoc vs setDoc to not fully replace
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
@@ -21,20 +21,15 @@ async function loadOtherEssays(){
     const docRef = collection(db,"ECG")
     const tagQuery = query(docRef, where("submitter", "!=", username),where("reviewer","==",null),limit(3));
     const tagQuerySnapshot = await getDocs(tagQuery);
-    console.log(tagQuerySnapshot);
     const essays = [EO1,EO2,EO3];
     var i = 0
     tagQuerySnapshot.forEach((doc) => {
-        console.log(doc);
         var dd = doc.data();
         var element = essays[i];
         element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter)
         +"<br>"+"<span class='dontshow'+id="+String(i)+">"+String(dd.url)+"</span>" //remove id [number] later
         element.addEventListener("click",onClickElement);                           //when it's no longer needed for debugging
         i+=1
-        //console.log(doc.id, " => ", doc.data());
-        //id is docName, other attributes are their field name in the db
-        //dialog into href
       });
 }
 async function onClickElement(event){
@@ -51,11 +46,11 @@ async function onClickElement(event){
     const user = auth.currentUser;
     var username = user.displayName;
     //window.open(String(OEUrl));
-    const urlQuery = query(docRef, where("url", "==", OEUrl),limit(1));
-    const urlQuerySnapshot = await getDocs(urlQuery);
+    const urlQuery = query(docRef, where("url", "==", OEUrl));
+    const urlQuerySnapshot = await getDoc(urlQuery);
     console.log(urlQuerySnapshot);
     urlQuerySnapshot.forEach((doc) => {
-      updateDoc(doc,{reviewer:username});
+      doc.updateDoc({reviewer:username});
     });
     //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
