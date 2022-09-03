@@ -21,9 +21,11 @@ async function loadOtherEssays(){
     const docRef = collection(db,"ECG")
     const tagQuery = query(docRef, where("submitter", "!=", username),where("reviewer","==",null),limit(3));
     const tagQuerySnapshot = await getDocs(tagQuery);
+    console.log(tagQuerySnapshot);
     const essays = [EO1,EO2,EO3];
     var i = 0
     tagQuerySnapshot.forEach((doc) => {
+        console.log(doc);
         var dd = doc.data();
         var element = essays[i];
         element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter)
@@ -48,7 +50,7 @@ async function onClickElement(event){
   if (result==true){
     const user = auth.currentUser;
     var username = user.displayName;
-    window.open(String(OEUrl));
+    //window.open(String(OEUrl));
     const urlQuery = query(docRef, where("url", "==", OEUrl),limit(1));
     const urlQuerySnapshot = await getDocs(urlQuery);
     console.log(urlQuerySnapshot);
