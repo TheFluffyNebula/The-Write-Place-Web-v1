@@ -38,7 +38,7 @@ async function onClickElement(event){
   //console.log(event.currentTarget.innerText);
   var str = event.currentTarget.innerText;
   console.log(str.length);
-  for(i = 0; i < str.length; i++){
+  for(let i = 0; i < str.length; i++){
     console.log(str[i]);
   }
   // var result = confirm('Would you like to go to profile?');
