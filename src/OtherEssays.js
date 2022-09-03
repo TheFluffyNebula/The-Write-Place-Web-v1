@@ -50,7 +50,8 @@ async function onClickElement(event){
     const urlQuerySnapshot = await getDoc(urlQuery);
     console.log(urlQuerySnapshot);
     urlQuerySnapshot.forEach((doc) => {
-      doc.updateDoc({reviewer:username});
+      console.log(doc, doc.data, doc.id);
+      updateDoc(doc.id,{reviewer:username});
     });
     //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
