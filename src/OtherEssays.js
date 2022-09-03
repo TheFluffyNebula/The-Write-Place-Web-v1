@@ -42,7 +42,7 @@ async function onClickElement(event){
   var str = event.currentTarget.innerText;
   for(let i = 0; i < str.length; i++){
     if (str.slice(i,i+5)=="https"){
-      const OEUrl = str.slice(i,str.length);
+      var OEUrl = str.slice(i,str.length);
       break
     }
   }
