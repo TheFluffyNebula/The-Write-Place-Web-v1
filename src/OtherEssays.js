@@ -36,7 +36,7 @@ async function loadOtherEssays(){
 }
 async function onClickElement(event){
   console.log(event.currentTarget);
-  console.log(event.currentTarget.innerContent);
+  console.log(event.currentTarget.innerText);
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);

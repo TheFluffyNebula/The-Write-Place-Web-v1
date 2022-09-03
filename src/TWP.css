@@ -59,6 +59,6 @@ div.EssayOther{
     text-align: center;
 }
 span.dontshow{
-    display: none;
+    color: lightgreen;
     /* border: 2px solid purple; */
 }
