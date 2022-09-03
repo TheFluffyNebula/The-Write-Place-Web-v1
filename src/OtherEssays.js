@@ -37,7 +37,7 @@ async function loadOtherEssays(){
 async function onClickElement(event){
   //console.log(event.currentTarget.innerText);
   var str = event.currentTarget.innerText;
-  console.log(length(str));
+  console.log(str.length);
   // var result = confirm('Would you like to go to profile?');
   // if (result==true){
   //   location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile")
