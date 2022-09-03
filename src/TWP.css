@@ -52,9 +52,13 @@ div.OtherEssays{
     position: fixed;
     margin-left: 5%;
     margin-right: 5%;
+
     top:50%;
 }
+div.EssayOther{
+    text-align: center;
+}
 span.dontshow{
-    /* display: none; */
-    border: 2px solid purple;
+    display: none;
+    /* border: 2px solid purple; */
 }
