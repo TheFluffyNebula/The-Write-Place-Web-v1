@@ -25,7 +25,7 @@ async function loadOtherEssays(){
     tagQuerySnapshot.forEach((doc) => {
         var dd = doc.data();
         var element = essays[i];
-        element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter) //dialog into href
+        element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter)+String(<span class="dontshow">dd.url</span>) //dialog into href
         element.addEventListener("click",onClickElement);
         i+=1
         //console.log(doc.id, " => ", doc.data());
@@ -34,7 +34,7 @@ async function loadOtherEssays(){
 }
 async function onClickElement(event){
   console.log(event.currentTarget);
-  console.log(dd.url);
+  
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);

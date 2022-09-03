@@ -58,3 +58,6 @@ div.OtherEssays{
 div.EssayOther{
     border: 1px dotted brown;
 }
+span.dontshow{
+    display: none;
+}
