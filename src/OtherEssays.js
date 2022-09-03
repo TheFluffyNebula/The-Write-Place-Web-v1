@@ -25,7 +25,6 @@ async function loadOtherEssays(){
     tagQuerySnapshot.forEach((doc) => {
         var dd = doc.data();
         var element = essays[i];
-        var elementurl = essaysurl[i];
         element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter)+"<br>"
         +"<br>"+"<span class='dontshow'+id="+String(i)+">"+String(dd.url)+"</span>" 
         element.addEventListener("click",onClickElement);
