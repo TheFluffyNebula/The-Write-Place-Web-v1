@@ -47,12 +47,9 @@ async function onClickElement(event){
     var username = user.displayName;
     //window.open(String(OEUrl));
     const urlQuery = query(docRef, where("url", "==", OEUrl));
-    const urlQuerySnapshot = await getDoc(urlQuery);
-    console.log(urlQuerySnapshot);
-    urlQuerySnapshot.forEach((doc) => {
-      console.log(doc, doc.data, doc.id);
-      //updateDoc(doc.id,{reviewer:username});
-    });
+    updateDoc(urlQuery,{reviewer:username});
+    //const urlQuerySnapshot = await getDoc(urlQuery);
+  
     //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   if (result==false){
@@ -61,5 +58,4 @@ async function onClickElement(event){
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
-//loadOtherEssays();
 setTimeout(loadOtherEssays,500);
