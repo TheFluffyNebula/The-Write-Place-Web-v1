@@ -4,7 +4,7 @@ import {
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, } from 'firebase/auth';
-import { getFirestore, getDoc, getDocs, collection, query, where, limit, updateDoc} from "firebase/firestore";
+import { getFirestore, getDocs, collection, query, where, limit, updateDoc} from "firebase/firestore";
 //updateDoc vs setDoc to not fully replace
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
@@ -47,9 +47,9 @@ async function onClickElement(event){
     var username = user.displayName;
     //window.open(String(OEUrl));
     const urlQuery = query(docRef, where("url", "==", OEUrl));
-    updateDoc(urlQuery,{reviewer:username});
-    //const urlQuerySnapshot = await getDoc(urlQuery);
-  
+    const urlQuerySnapshot = await getDocs(urlQuery);
+    //updateDoc(urlQuerySnapshot[0],{reviewer:username});
+
     //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   if (result==false){
