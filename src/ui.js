@@ -21,3 +21,6 @@ export const textUserEmail = document.querySelector('#userEmail') //Profile
 export const EO1 = document.querySelector('#EO1') //OtherEssays
 export const EO2 = document.querySelector('#EO2') //OtherEssays
 export const EO3 = document.querySelector('#EO3') //OtherEssays
+export const TRL1 = document.querySelector('#TRL1') //ToReviewList
+export const TRL2 = document.querySelector('#TRL2') //ToReviewList
+export const TRL3 = document.querySelector('#TRL3') //ToReviewList

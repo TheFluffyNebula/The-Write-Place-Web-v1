@@ -4,7 +4,8 @@ import {
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, } from 'firebase/auth';
-import { getFirestore, getDocs, collection, query, where, limit} from "firebase/firestore"; //updateDoc vs setDoc to not fully replace
+import { getFirestore, getDocs, collection, query, where, limit, updateDoc} from "firebase/firestore";
+//updateDoc vs setDoc to not fully replace
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
     authDomain: "the-write-place-ea1e8.firebaseapp.com",
@@ -35,10 +36,7 @@ async function loadOtherEssays(){
       });
 }
 async function onClickElement(event){
-  //console.log(event.currentTarget.innerText);
-  //console.log(str.length);
-  //console.log(i)
-  //console.log(str.slice(i,str.length));
+  const docRef = collection(db,"ECG")
   var str = event.currentTarget.innerText;
   for(let i = 0; i < str.length; i++){
     if (str.slice(i,i+5)=="https"){
@@ -46,11 +44,17 @@ async function onClickElement(event){
       break
     }
   }
-  var result = confirm('Would you like to go to profile?');
-  if (result==true){  
+  var result = confirm('Would you like to review this essay?');
+  if (result==true){
+    const user = auth.currentUser;
+    var username = user.displayName;
     window.open(String(OEUrl));
-    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/ToReviewList");
-    //set reviewer to currentUser
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
+    const urlQuery = query(docRef, where("url", "==", OEUrl),limit(1));
+    const urlQuerySnapshot = await getDocs(urlQuery);
+    urlQuerySnapshot.forEach((doc) => {
+      updateDoc(doc,{reviewer:username});
+    });
   }
   if (result==false){
     event.preventDefault();
