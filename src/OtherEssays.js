@@ -38,6 +38,9 @@ async function onClickElement(event){
   //console.log(event.currentTarget.innerText);
   var str = event.currentTarget.innerText;
   console.log(str.length);
+  for(i = 0; i < str.length; i++){
+    console.log(str[i]);
+  }
   // var result = confirm('Would you like to go to profile?');
   // if (result==true){
   //   location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile")
