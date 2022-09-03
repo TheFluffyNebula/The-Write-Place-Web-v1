@@ -19,7 +19,7 @@ async function loadOtherEssays(){
     const user = auth.currentUser;
     var username = user.displayName;
     const docRef = collection(db,"ECG")
-    const tagQuery = query(docRef, where("submitter", "!=", username),limit(3));
+    const tagQuery = query(docRef, where("submitter", "!=", username),where("reviewer","==",null),limit(3));
     const tagQuerySnapshot = await getDocs(tagQuery);
     const essays = [EO1,EO2,EO3];
     var i = 0
@@ -36,7 +36,7 @@ async function loadOtherEssays(){
       });
 }
 async function onClickElement(event){
-  const docRef = collection(db,"ECG")
+  const docRef = collection(db,"ECG");
   var str = event.currentTarget.innerText;
   for(let i = 0; i < str.length; i++){
     if (str.slice(i,i+5)=="https"){
@@ -49,7 +49,7 @@ async function onClickElement(event){
     const user = auth.currentUser;
     var username = user.displayName;
     window.open(String(OEUrl));
-    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
+    //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
     const urlQuery = query(docRef, where("url", "==", OEUrl),limit(1));
     const urlQuerySnapshot = await getDocs(urlQuery);
     urlQuerySnapshot.forEach((doc) => {
