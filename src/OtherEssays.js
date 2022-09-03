@@ -29,7 +29,7 @@ async function loadOtherEssays(){
         var element = essays[i];
         var elementurl = essaysurl[i];
         element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter) //dialog into href
-        elementurl.innerHTML = "<a href = {dd.url}></a>";
+        elementurl.innerHTML = "<a href = "+String(dd.url)+"></a>";
         element.addEventListener("click",onClickElement);
         i+=1
         //console.log(doc.id, " => ", doc.data());
