@@ -37,13 +37,16 @@ async function loadOtherEssays(){
 async function onClickElement(event){
   //console.log(event.currentTarget.innerText);
   //console.log(str.length);
+  //console.log(i)
+  //console.log(str.slice(i,str.length));
   var str = event.currentTarget.innerText;
   for(let i = 0; i < str.length; i++){
     if (str.slice(i,i+5)=="https"){
-      console.log(i)
-      console.log(str.slice(i,str.length));
+      const OEUrl = str.slice(i,str.length);
+      break
     }
   }
+  console.log(OEUrl);
   // var result = confirm('Would you like to go to profile?');
   // if (result==true){
   //   location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile")
