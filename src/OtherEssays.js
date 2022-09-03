@@ -36,10 +36,13 @@ async function loadOtherEssays(){
 }
 async function onClickElement(event){
   //console.log(event.currentTarget.innerText);
+  //console.log(str.length);
   var str = event.currentTarget.innerText;
-  console.log(str.length);
   for(let i = 0; i < str.length; i++){
-    console.log(str[i]);
+    if (str.slice(i,i+5)=="https"){
+      console.log(i)
+      console.log(str.slice(i,str.length));
+    }
   }
   // var result = confirm('Would you like to go to profile?');
   // if (result==true){
