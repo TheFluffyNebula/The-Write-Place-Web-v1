@@ -21,6 +21,3 @@ export const textUserEmail = document.querySelector('#userEmail') //Profile
 export const EO1 = document.querySelector('#EO1') //OtherEssays
 export const EO2 = document.querySelector('#EO2') //OtherEssays
 export const EO3 = document.querySelector('#EO3') //OtherEssays
-export const EO1Url = document.querySelector('#EO1Url') //OtherEssays
-export const EO2Url = document.querySelector('#EO2Url') //OtherEssays
-export const EO3Url = document.querySelector('#EO3Url') //OtherEssays
