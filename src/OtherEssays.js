@@ -46,14 +46,15 @@ async function onClickElement(event){
       break
     }
   }
-  console.log(OEUrl);
-  // var result = confirm('Would you like to go to profile?');
-  // if (result==true){
-  //   location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile")
-  // }
-  // if (result==false){
-  //   event.preventDefault();
-  // }
+  var result = confirm('Would you like to go to profile?');
+  if (result==true){  
+    window.open(String(OEUrl));
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/ToReviewList");
+    //set reviewer to currentUser
+  }
+  if (result==false){
+    event.preventDefault();
+  }
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
