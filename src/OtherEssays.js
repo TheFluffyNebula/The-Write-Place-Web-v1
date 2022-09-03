@@ -49,13 +49,13 @@ async function onClickElement(event){
     const user = auth.currentUser;
     var username = user.displayName;
     window.open(String(OEUrl));
-    //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
     const urlQuery = query(docRef, where("url", "==", OEUrl),limit(1));
-    console.log(urlQuerySnapshot);
     const urlQuerySnapshot = await getDocs(urlQuery);
+    console.log(urlQuerySnapshot);
     urlQuerySnapshot.forEach((doc) => {
       updateDoc(doc,{reviewer:username});
     });
+    //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   if (result==false){
     event.preventDefault();
