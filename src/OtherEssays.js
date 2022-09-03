@@ -35,8 +35,15 @@ async function loadOtherEssays(){
       });
 }
 async function onClickElement(event){
-  console.log(event.currentTarget);
+  //console.log(event.currentTarget);
   console.log(event.currentTarget.innerText);
+  var result = confirm('Would you like to go to profile?');
+  if (result==true){
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile")
+  }
+  if (result==false){
+    event.preventDefault();
+  }
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
