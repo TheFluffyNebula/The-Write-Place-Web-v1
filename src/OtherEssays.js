@@ -1,6 +1,7 @@
 import './TWP.css';
 import {
   EO1,EO2,EO3,
+  EO1Url,EO2Url,EO3Url
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, } from 'firebase/auth';
@@ -21,11 +22,14 @@ async function loadOtherEssays(){
     const tagQuery = query(docRef, where("submitter", "!=", username),limit(3));
     const tagQuerySnapshot = await getDocs(tagQuery);
     const essays = [EO1,EO2,EO3];
+    const essaysurl = [EO1Url,EO2Url,EO3Url];
     var i = 0
     tagQuerySnapshot.forEach((doc) => {
         var dd = doc.data();
         var element = essays[i];
-        element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter)+String(<span class="dontshow">dd.url</span>) //dialog into href
+        var elementurl = essaysurl[i];
+        element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter) //dialog into href
+        elementurl.innerHTML = "<a href = {dd.url}></a>";
         element.addEventListener("click",onClickElement);
         i+=1
         //console.log(doc.id, " => ", doc.data());

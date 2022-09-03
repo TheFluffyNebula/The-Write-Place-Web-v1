@@ -53,11 +53,8 @@ div.OtherEssays{
     margin-left: 5%;
     margin-right: 5%;
     top:50%;
-
-}
-div.EssayOther{
-    border: 1px dotted brown;
 }
 span.dontshow{
-    display: none;
+    /* display: none; */
+    border: 2px solid purple;
 }

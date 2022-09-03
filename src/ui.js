@@ -7,9 +7,6 @@ export const editSecurePassword = document.querySelector('#editSecurePassword') 
 export const editConfirmPassword = document.querySelector('#editConfirmPassword') //ChangePassword
 export const editUploadDocumentName = document.querySelector('#editUploadDocumentName') //Upload
 export const editUploadDocumentUrl = document.querySelector('#editUploadDocumentUrl') //Upload
-export const EO1 = document.querySelector('#EO1') //OtherEssays
-export const EO2 = document.querySelector('#EO2') //OtherEssays
-export const EO3 = document.querySelector('#EO3') //OtherEssays
 
 //buttons
 export const buttonSignIn = document.querySelector('#buttonSignIn') //Login
@@ -21,3 +18,9 @@ export const buttonUploadDocument = document.querySelector('#buttonUploadDocumen
 //regular text
 export const textUserUsername = document.querySelector('#userUsername') //Profile
 export const textUserEmail = document.querySelector('#userEmail') //Profile
+export const EO1 = document.querySelector('#EO1') //OtherEssays
+export const EO2 = document.querySelector('#EO2') //OtherEssays
+export const EO3 = document.querySelector('#EO3') //OtherEssays
+export const EO1Url = document.querySelector('#EO1Url') //OtherEssays
+export const EO2Url = document.querySelector('#EO2Url') //OtherEssays
+export const EO3Url = document.querySelector('#EO3Url') //OtherEssays
