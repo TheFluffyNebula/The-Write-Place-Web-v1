@@ -51,6 +51,7 @@ async function onClickElement(event){
     window.open(String(OEUrl));
     //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
     const urlQuery = query(docRef, where("url", "==", OEUrl),limit(1));
+    console.log(urlQuerySnapshot);
     const urlQuerySnapshot = await getDocs(urlQuery);
     urlQuerySnapshot.forEach((doc) => {
       updateDoc(doc,{reviewer:username});
