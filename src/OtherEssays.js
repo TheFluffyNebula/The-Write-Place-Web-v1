@@ -28,12 +28,13 @@ async function loadOtherEssays(){
         var dd = doc.data();
         var element = essays[i];
         var elementurl = essaysurl[i];
-        element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter) //dialog into href
-        elementurl.innerHTML = String(dd.url);
+        element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter)+"<br>"
+        +"<span class='dontshow'+id="+String(i)+">"+String(dd.url)+"</span>" 
         element.addEventListener("click",onClickElement);
         i+=1
         //console.log(doc.id, " => ", doc.data());
         //id is docName, other attributes are their field name in the db
+        //dialog into href
       });
 }
 async function onClickElement(event){
