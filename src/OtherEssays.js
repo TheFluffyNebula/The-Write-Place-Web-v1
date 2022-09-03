@@ -26,8 +26,8 @@ async function loadOtherEssays(){
         var dd = doc.data();
         var element = essays[i];
         element.innerHTML = String(doc.id)+"<br>"+String(dd.submitter)
-        +"<br>"+"<span class='dontshow'+id="+String(i)+">"+String(dd.url)+"</span>" 
-        element.addEventListener("click",onClickElement);
+        +"<br>"+"<span class='dontshow'+id="+String(i)+">"+String(dd.url)+"</span>" //remove id [number] later
+        element.addEventListener("click",onClickElement);                           //when it's no longer needed for debugging
         i+=1
         //console.log(doc.id, " => ", doc.data());
         //id is docName, other attributes are their field name in the db
@@ -35,15 +35,16 @@ async function loadOtherEssays(){
       });
 }
 async function onClickElement(event){
-  //console.log(event.currentTarget);
-  console.log(event.currentTarget.innerText);
-  var result = confirm('Would you like to go to profile?');
-  if (result==true){
-    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile")
-  }
-  if (result==false){
-    event.preventDefault();
-  }
+  //console.log(event.currentTarget.innerText);
+  var str = event.currentTarget.innerText;
+  console.log(length(str));
+  // var result = confirm('Would you like to go to profile?');
+  // if (result==true){
+  //   location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile")
+  // }
+  // if (result==false){
+  //   event.preventDefault();
+  // }
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
