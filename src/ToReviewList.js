@@ -14,7 +14,7 @@ const firebaseApp = initializeApp({
     appId: "1:144537031501:web:381f1b2964a4e95c049d04",
     measurementId: "G-RFS3FW3HTE"
 })
-async function loadReviewList(){
+async function loadToReviewList(){
     const user = auth.currentUser;
     var username = user.displayName;
     const docRef = collection(db,"ECG")
