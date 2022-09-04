@@ -35,7 +35,7 @@ async function loadToReviewList(){
       });
 }
 async function onClickElement(event){
-  const docRef = collection(db,"ECG");
+  //const docRef = collection(db,"ECG");
   var str = event.currentTarget.innerText;
   for(let i = 0; i < str.length; i++){
     if (str.slice(i,i+5)=="https"){
@@ -48,10 +48,11 @@ async function onClickElement(event){
     window.open(String(TRLUrl));
   }
   if (result==false){
-    const urlQuery = query(docRef, where("url", "==", TRLUrl));
-    const urlQuerySnapshot = await getDocs(urlQuery);
-    updateDoc(urlQuerySnapshot.docs[0].ref,{complete:true});
-    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
+    event.preventDefault();
+    // const urlQuery = query(docRef, where("url", "==", TRLUrl));
+    // const urlQuerySnapshot = await getDocs(urlQuery);
+    // updateDoc(urlQuerySnapshot.docs[0].ref,{complete:true});
+    // location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
 }
 const auth = getAuth(firebaseApp);
