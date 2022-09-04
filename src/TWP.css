@@ -45,7 +45,23 @@ div.ProfileNav{
     width: 30%;
     text-align: center;
 }
-div.OtherEssays{
+div.ToReviewListNav{
+    width: 30%;
+    text-align: center;
+}
+div.OtherEssaysNav{
+    width: 30%;
+    text-align: center;
+}
+div.UploadNav{
+    width: 30%;
+    text-align: center;
+}
+div.FeedbackListNav{
+    width: 30%;
+    text-align: center;
+}
+div.EssayList{
     display:flex;
     width:90%;
     justify-content:space-around;
@@ -55,7 +71,7 @@ div.OtherEssays{
 
     top:50%;
 }
-div.EssayOther{
+div.Essay{
     text-align: center;
 }
 span.dontshow{
