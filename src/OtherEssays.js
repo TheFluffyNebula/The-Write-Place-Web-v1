@@ -45,12 +45,11 @@ async function onClickElement(event){
   if (result==true){
     const user = auth.currentUser;
     var username = user.displayName;
-    //window.open(String(OEUrl));
+    window.open(String(OEUrl));
     const urlQuery = query(docRef, where("url", "==", OEUrl));
     const urlQuerySnapshot = await getDocs(urlQuery);
     updateDoc(urlQuerySnapshot.docs[0].ref,{reviewer:username});
-
-    //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   if (result==false){
     event.preventDefault();

@@ -35,28 +35,33 @@ async function loadReviewList(){
       });
 }
 async function onClickElement(event){
-  //console.log(event.currentTarget.innerText);
-  //console.log(str.length);
-  //console.log(i)
-  //console.log(str.slice(i,str.length));
+  const docRef = collection(db,"ECG");
   var str = event.currentTarget.innerText;
   for(let i = 0; i < str.length; i++){
     if (str.slice(i,i+5)=="https"){
-      var OEUrl = str.slice(i,str.length);
+      var TRLUrl = str.slice(i,str.length);
       break
     }
   }
-  var result = confirm('Would you like to review this essay?');
-  if (result==true){  
-    window.open(String(OEUrl));
-    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/ToReviewList");
-    //set reviewer to currentUser
+  var result = confirm('Yes to open in google docs, no to finish reviewing the essay');
+  if (result==true){
+    const user = auth.currentUser;
+    var username = user.displayName;
+    window.open(String(TRLUrl));
+    const urlQuery = query(docRef, where("url", "==", TRLUrl));
+    const urlQuerySnapshot = await getDocs(urlQuery);
+    updateDoc(urlQuerySnapshot.docs[0].ref,{reviewer:username});
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   if (result==false){
-    event.preventDefault();
+    const user = auth.currentUser;
+    var username = user.displayName;
+    const urlQuery = query(docRef, where("url", "==", TRLUrl));
+    const urlQuerySnapshot = await getDocs(urlQuery);
+    updateDoc(urlQuerySnapshot.docs[0].ref,{complete:true});
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
-//loadOtherEssays();
-setTimeout(loadReviewList,500);
+setTimeout(loadToReviewList,500);
