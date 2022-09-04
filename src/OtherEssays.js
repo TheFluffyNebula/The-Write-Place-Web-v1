@@ -20,7 +20,7 @@ async function loadOtherEssays(){
     var username = user.displayName;
     const docRef = collection(db,"ECG")
     const tagQuery = query(docRef, where("submitter", "!=", username),
-    where("reviewer","==",null),where("complete","==",false),limit(3));
+    where("reviewer","==",null),limit(3)); //,where("complete","==",false)
     const tagQuerySnapshot = await getDocs(tagQuery);
     const essays = [EO1,EO2,EO3];
     var i = 0
@@ -50,7 +50,7 @@ async function onClickElement(event){
     const urlQuery = query(docRef, where("url", "==", OEUrl));
     const urlQuerySnapshot = await getDocs(urlQuery);
     updateDoc(urlQuerySnapshot.docs[0].ref,{reviewer:username});
-    //location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   if (result==false){
     event.preventDefault();
