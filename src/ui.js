@@ -24,3 +24,6 @@ export const EO3 = document.querySelector('#EO3') //OtherEssays
 export const TRL1 = document.querySelector('#TRL1') //ToReviewList
 export const TRL2 = document.querySelector('#TRL2') //ToReviewList
 export const TRL3 = document.querySelector('#TRL3') //ToReviewList
+export const FL1 = document.querySelector('#FL1') //FeedbackList
+export const FL2 = document.querySelector('#FL2') //FeedbackList
+export const FL3 = document.querySelector('#FL3') //FeedbackList
