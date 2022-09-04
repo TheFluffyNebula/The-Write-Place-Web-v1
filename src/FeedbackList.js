@@ -14,7 +14,7 @@ const firebaseApp = initializeApp({
     appId: "1:144537031501:web:381f1b2964a4e95c049d04",
     measurementId: "G-RFS3FW3HTE"
 })
-async function loadToReviewList(){
+async function loadFeedbackList(){
     const user = auth.currentUser;
     var username = user.displayName;
     const docRef = collection(db,"ECG")
@@ -59,4 +59,4 @@ async function onClickElement(event){
 }
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
-setTimeout(loadToReviewList,500);
+setTimeout(loadFeedbackList,500);
