@@ -45,17 +45,9 @@ async function onClickElement(event){
   }
   var result = confirm('Yes to open in google docs, no to finish reviewing the essay');
   if (result==true){
-    const user = auth.currentUser;
-    var username = user.displayName;
     window.open(String(TRLUrl));
-    const urlQuery = query(docRef, where("url", "==", TRLUrl));
-    const urlQuerySnapshot = await getDocs(urlQuery);
-    updateDoc(urlQuerySnapshot.docs[0].ref,{reviewer:username});
-    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   if (result==false){
-    const user = auth.currentUser;
-    var username = user.displayName;
     const urlQuery = query(docRef, where("url", "==", TRLUrl));
     const urlQuerySnapshot = await getDocs(urlQuery);
     updateDoc(urlQuerySnapshot.docs[0].ref,{complete:true});
