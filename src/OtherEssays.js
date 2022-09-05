@@ -51,7 +51,7 @@ async function onClickElement(event){
     const urlQuerySnapshot = await getDocs(urlQuery);
     console.log(urlQuerySnapshot);
     updateDoc(urlQuerySnapshot.docs[0].ref,{reviewer:username});
-    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
+    setTimeout(location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile"),300);
   }
   if (result==false){
     event.preventDefault();
