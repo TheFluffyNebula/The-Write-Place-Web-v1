@@ -35,7 +35,7 @@ async function loadToReviewList(){
       });
 }
 async function onClickElement(event){
-  //const docRef = collection(db,"ECG");
+  const docRef = collection(db,"ECG");
   var str = event.currentTarget.innerText;
   for(let i = 0; i < str.length; i++){
     if (str.slice(i,i+5)=="https"){
