@@ -41,6 +41,31 @@ img#TWPLogo{
     float: left;
     width: 50%;
 }
+button.UploadButton{
+    position: absolute;
+    top:40%;
+    left: 45%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: white;
+    background-color:rgb(128,214,255);
+    width: fit-content;
+    border: 2px dotted purple;
+}
+input.UploadEdit{
+    background-color: orange;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+div.UploadFields{
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+}
 div.NavBar{
     display: flex;
     width: 100%;
