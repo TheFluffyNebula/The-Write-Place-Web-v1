@@ -48,11 +48,11 @@ async function onClickElement(event){
     window.open(String(TRLUrl));
   }
   if (result==false){
-    event.preventDefault();
-    // const urlQuery = query(docRef, where("url", "==", TRLUrl));
-    // const urlQuerySnapshot = await getDocs(urlQuery);
-    // updateDoc(urlQuerySnapshot.docs[0].ref,{complete:true});
-    // location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
+    //event.preventDefault();
+    const urlQuery = query(docRef, where("url", "==", TRLUrl));
+    const urlQuerySnapshot = await getDocs(urlQuery);
+    updateDoc(urlQuerySnapshot.docs[0].ref,{cmp:"yes"});
+    location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
 }
 const auth = getAuth(firebaseApp);
