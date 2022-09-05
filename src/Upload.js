@@ -29,7 +29,7 @@ const createDocument = async () => {
         submitter: displayName,
         url: documentUrl,
       });
-
+    alert('Document received!');
 }
 buttonUploadDocument.addEventListener("click",createDocument);
 const auth = getAuth(firebaseApp);
