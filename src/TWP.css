@@ -67,6 +67,58 @@ div.UploadFields{
     align-items: center;
     justify-content:space-between;
 }
+button.ForgotPassword{
+    position: absolute;
+    top:40%;
+    left: 40%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: white;
+    font-size: 2em;
+    background-color:rgb(128,214,255);
+    width: fit-content;
+    border: 2px dotted purple;
+}
+input.ForgotPasswordEdit{
+    background-color: orange;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+div.ForgotPasswordFields{
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-between;
+}
+button.ChangePassword{
+    position: absolute;
+    top:40%;
+    left: 40%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: white;
+    font-size: 2em;
+    background-color:rgb(128,214,255);
+    width: fit-content;
+    border: 2px dotted purple;
+}
+input.ChangePasswordEdit{
+    background-color: orange;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+div.ChangePasswordFields{
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-between;
+}
 div.NavBar{
     display: flex;
     width: 100%;
