@@ -124,6 +124,11 @@ div.ChangePasswordFields{
         justify-content:space-between;
 }
 div.NavBar{
+    background-color: pink;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     width: 100%;
     justify-content: space-around;
