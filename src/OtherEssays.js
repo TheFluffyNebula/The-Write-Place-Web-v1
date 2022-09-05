@@ -51,7 +51,6 @@ async function onClickElement(event){
     const urlQuerySnapshot = await getDocs(urlQuery);
     console.log(urlQuerySnapshot);
     await updateDoc(urlQuerySnapshot.docs[0].ref,{reviewer:username});
-    alert("You can now see this essay in your review list!");
     location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
   }
   if (result==false){
