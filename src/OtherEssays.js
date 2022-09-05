@@ -20,7 +20,7 @@ async function loadOtherEssays(){
     var username = user.displayName;
     const docRef = collection(db,"ECG");
     const tagQuery = query(docRef, where("submitter", "!=", username),
-    where("reviewer","==",null), limit(3)); //,where("complete","==",false)
+    where("reviewer","==",null),where("complete","==",false), limit(3)); 
     const tagQuerySnapshot = await getDocs(tagQuery);
     const essays = [EO1,EO2,EO3];
     var i = 0
