@@ -44,12 +44,13 @@ img#TWPLogo{
 button.UploadButton{
     position: absolute;
     top:40%;
-    left: 45%;
+    left: 40%;
     padding-top: 100px;
     padding-bottom: 100px;
     padding-left: 100px;
     padding-right: 100px;
     color: white;
+    font-size: 2em;
     background-color:rgb(128,214,255);
     width: fit-content;
     border: 2px dotted purple;
