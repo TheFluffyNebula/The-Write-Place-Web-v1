@@ -23,6 +23,7 @@ const createDocument = async () => {
     const documentName = editUploadDocumentName.value;
     const documentUrl = editUploadDocumentUrl.value;
     await setDoc(doc(db, "ECG", documentName), {
+        cmp: "no",
         complete: false,
         date: now,
         reviewer: null,

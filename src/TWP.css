@@ -29,6 +29,14 @@ div.LoginFields{
     align-items: center;
     justify-content:space-between;
 }
+div.LD{/*LoginDescription*/
+    color: salmon;
+    font-family: monospace;
+    font-size: 1.4em;
+    position:absolute;
+    right:10%;
+    bottom: 30%;
+}
 img#TWPLogo{
     float: left;
     width: 50%;
