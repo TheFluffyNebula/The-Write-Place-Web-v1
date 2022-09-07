@@ -169,13 +169,13 @@ div.FeedbackListNav{
     text-align: center;
 }
 div.EssayList{
+    font-size: 1.5em;
     display:flex;
     width:90%;
     justify-content:space-around;
     position: fixed;
     margin-left: 5%;
     margin-right: 5%;
-
     top:50%;
 }
 div.Essay{
@@ -183,5 +183,6 @@ div.Essay{
 }
 span.dontshow{
     color: lightgreen;
+    font-size: 1em;
     /* border: 2px solid purple; */
 }
