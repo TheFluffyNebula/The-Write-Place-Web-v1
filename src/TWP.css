@@ -1,10 +1,22 @@
 body{
     color:black;
     background-color: lightgreen;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 h2{
     text-align: center;
     color: purple;
+}
+div.HomeImages{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+h1 a:link, h1 a:visited, h1 a:hover, h1 a:active{
+    text-decoration: none;
+}
+h1 a:hover{
+    color: pink;
 }
 button.Login{
     color: white;
