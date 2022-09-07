@@ -36,10 +36,10 @@ div.LoginFields{
 div.LD{/*LoginDescription*/
     color: salmon;
     font-family: monospace;
-    font-size: 1.4em;
+    font-size: 1.5em;
     position:absolute;
-    right:10%;
-    bottom: 30%;
+    right:5%;
+    bottom: 10%;
 }
 img#TWPLogo{
     float: left;
