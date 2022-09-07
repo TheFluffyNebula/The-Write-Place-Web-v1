@@ -2,6 +2,10 @@ body{
     color:black;
     background-color: lightgreen;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* background-image: url("../images/TWP_LooseLeaf.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;; */
 }
 h2{
     text-align: center;
@@ -169,7 +173,6 @@ div.FeedbackListNav{
     text-align: center;
 }
 div.EssayList{
-    font-size: 1.5em;
     display:flex;
     width:90%;
     justify-content:space-around;
