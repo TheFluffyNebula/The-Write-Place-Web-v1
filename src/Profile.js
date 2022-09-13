@@ -35,7 +35,10 @@ async function displayUsernameAndEmail(){
 }
 
 const setProfilePicture = async (event) => {
-  avatar.innerHTML = "<img src="+String(event.target.value)+">";
+  const user = auth.currentUser;
+  const userid = user.uid;
+  //avatar.innerHTML = "<img src="+String(event.target.value)+">";
+  console.log(event.target.value,userid);
 }
 const auth = getAuth(firebaseApp);
 buttonSignOut.addEventListener("click",Sign_Out);
