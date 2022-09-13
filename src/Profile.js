@@ -3,6 +3,7 @@ import {
   buttonSignOut,
   textUserUsername,
   textUserEmail,
+  avatar,
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, signOut} from 'firebase/auth';
@@ -33,6 +34,10 @@ async function displayUsernameAndEmail(){
   textUserEmail.innerHTML = "Email:"+String(email);
 }
 
+const setProfilePicture = async () => {
+  avatar.innerHTML = "<img src="+String(target.value)+">";
+}
 const auth = getAuth(firebaseApp);
 buttonSignOut.addEventListener("click",Sign_Out);
+addEventListener('change', setProfilePicture);
 setTimeout(displayUsernameAndEmail,400);

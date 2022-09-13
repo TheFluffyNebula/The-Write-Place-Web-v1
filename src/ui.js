@@ -27,3 +27,5 @@ export const TRL3 = document.querySelector('#TRL3') //ToReviewList
 export const FL1 = document.querySelector('#FL1') //FeedbackList
 export const FL2 = document.querySelector('#FL2') //FeedbackList
 export const FL3 = document.querySelector('#FL3') //FeedbackList
+//images
+export const avatar = document.querySelector('#avatar') //Profile Picture
