@@ -45,8 +45,7 @@ const uploadProfilePictureToStorage = async (event) => {
     fr.onload = function () {
         avatar.src = fr.result;
     }
-    var testing123 = fr.readAsDataURL(files[0]);
-    console.log(testing123);
+    fr.readAsDataURL(files[0]);
   //avatar.innerHTML = "<img src="+String(event.target.value)+">";
   }
 }
