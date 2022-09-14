@@ -39,15 +39,12 @@ const uploadProfilePictureToStorage = async (event) => {
   const user = auth.currentUser;
   const userid = user.uid;
   const storageRef = ref(storage, 'pfps');
-  var avt = event.target, files = avt.files;
-  if (FileReader && files && files.length) {
-    var fr = new FileReader();
-    fr.onload = function () {
-        avatar.src = fr.result;
-    }
-    fr.readAsDataURL(files[0]);
+  const fileList = this.files;
+  const pfp = fileList[0];
+  console.log(pfp);
   //avatar.innerHTML = "<img src="+String(event.target.value)+">";
-  }
+  //readAsDataURL doesn't work as it returns nothing
+  //3rd attempt: URL.createObjectURL()
 }
 const auth = getAuth(firebaseApp);
 const storage = getStorage();
