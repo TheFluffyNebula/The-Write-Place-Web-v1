@@ -7,6 +7,7 @@ import {
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, signOut} from 'firebase/auth';
+import { getStorage, ref, getDownloadURL} from "firebase/storage";
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
     authDomain: "the-write-place-ea1e8.firebaseapp.com",
@@ -34,13 +35,24 @@ async function displayUsernameAndEmail(){
   textUserEmail.innerHTML = "Email:"+String(email);
 }
 
-const setProfilePicture = async (event) => {
+const uploadProfilePictureToStorage = async (event) => {
   const user = auth.currentUser;
   const userid = user.uid;
+  const storageRef = ref(storage, 'pfps');
+  var avt = event.target;
+  files = avt.files;
+  if (FileReader && files && files.length) {
+    var fr = new FileReader();
+    fr.onload = function () {
+        document.getElementById(outImage).src = fr.result;
+    }
+    var testing123 = fr.readAsDataURL(files[0]);
+    console.log(testing123);
   //avatar.innerHTML = "<img src="+String(event.target.value)+">";
-  console.log(event.target.value,userid);
+  }
 }
 const auth = getAuth(firebaseApp);
+const storage = getStorage();
 buttonSignOut.addEventListener("click",Sign_Out);
-addEventListener('change', setProfilePicture);
+addEventListener('change', uploadProfilePictureToStorage);
 setTimeout(displayUsernameAndEmail,400);
