@@ -39,12 +39,11 @@ const uploadProfilePictureToStorage = async (event) => {
   const user = auth.currentUser;
   const userid = user.uid;
   const storageRef = ref(storage, 'pfps');
-  var avt = event.target;
-  files = avt.files;
+  var avt = event.target, files = avt.files;
   if (FileReader && files && files.length) {
     var fr = new FileReader();
     fr.onload = function () {
-        document.getElementById(outImage).src = fr.result;
+        avatar.src = fr.result;
     }
     var testing123 = fr.readAsDataURL(files[0]);
     console.log(testing123);
