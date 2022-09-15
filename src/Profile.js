@@ -38,7 +38,7 @@ async function displayUsernameAndEmail(){
 const uploadProfilePictureToStorage = async () => {
   const user = auth.currentUser;
   const userid = user.uid;
-  const storageRef = ref(storage, 'pfps');
+  const storageRef = ref(storage, "pfps/"+String(userid)+".jpeg");
   const file = avatar.files[0];
   //console.log(file);
   uploadBytes(storageRef, file).then((snapshot) => {
