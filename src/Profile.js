@@ -35,19 +35,24 @@ async function displayUsernameAndEmail(){
   textUserEmail.innerHTML = "Email:"+String(email);
 }
 
+// async function displayProfilePicture(){
+// }
+
 const uploadProfilePictureToStorage = async () => {
   const user = auth.currentUser;
   const userid = user.uid;
   const storageRef = ref(storage, "pfps/"+String(userid)+".jpeg");
   const file = avatar.files[0];
   //console.log(file);
-  uploadBytes(storageRef, file).then((snapshot) => {
+  await uploadBytes(storageRef, file).then((snapshot) => {
     console.log('Uploaded file to storage!');
   });
-  
-  //avatar.innerHTML = "<img src="+String(event.target.value)+">";
-  //readAsDataURL doesn't work as it returns nothing
-  //3rd attempt: URL.createObjectURL()
+  //download
+  const pfpRef = ref(storage, "pfps/"+String(userid)+".jpeg");
+  getDownloadURL(pfpRef).then((url) => {
+    // Insert url into an <img> tag to "download"
+    avatar.innerHTML = "<img src="+String(url)+">";
+  })
 }
 
 const auth = getAuth(firebaseApp);
@@ -55,3 +60,4 @@ const storage = getStorage();
 buttonSignOut.addEventListener("click",Sign_Out);
 addEventListener('change', uploadProfilePictureToStorage);
 setTimeout(displayUsernameAndEmail,400);
+//setTimeout(displayProfilePicture,400);
