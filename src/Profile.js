@@ -7,7 +7,7 @@ import {
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, signOut} from 'firebase/auth';
-import { getStorage, ref, getDownloadURL} from "firebase/storage";
+import { getStorage, ref, uploadBytes ,getDownloadURL} from "firebase/storage";
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCQ1As5zCwlIDx_iU3S2-zK8Fy-O-DvVVc",
     authDomain: "the-write-place-ea1e8.firebaseapp.com",
