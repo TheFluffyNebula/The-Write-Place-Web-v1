@@ -36,8 +36,33 @@ async function displayUsernameAndEmail(){
   textUserEmail.innerHTML = "Email:"+String(email);
 }
 
-// async function displayProfilePicture(){
-// }
+async function displayProfilePicture(){
+  const user = auth.currentUser;
+  const userid = user.uid;
+  const storageRef = ref(storage, "pfps/"+String(userid)+".jpeg");
+  getDownloadURL(storageRef).then((url) => {
+    // Insert url into an <img> tag to "download"
+    imagePFP.innerHTML = "<img src="+String(url)+">";
+  }).catch((error) => {
+    // A full list of error codes is available at
+    // https://firebase.google.com/docs/storage/web/handle-errors
+    switch (error.code) {
+      case 'storage/object-not-found':
+        console.log("File doesn't exist");
+        break;
+      case 'storage/unauthorized':
+        console.log("User doesn't have permission to access the object");
+        break;
+      case 'storage/canceled':
+        console.log("User canceled the upload");
+        break;
+      // ...
+      case 'storage/unknown':
+        console.log("Unknown error occurred, inspect the server response");
+        break;
+    }
+  });
+}
 
 const uploadProfilePictureToStorage = async () => {
   const user = auth.currentUser;
@@ -61,4 +86,4 @@ const storage = getStorage();
 buttonSignOut.addEventListener("click",Sign_Out);
 addEventListener('change', uploadProfilePictureToStorage);
 setTimeout(displayUsernameAndEmail,400);
-//setTimeout(displayProfilePicture,400);
+setTimeout(displayProfilePicture,400);
