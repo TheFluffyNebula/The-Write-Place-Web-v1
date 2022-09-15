@@ -15,6 +15,7 @@ export const buttonFPSubmit = document.querySelector('#buttonFPSubmit') //Forgot
 export const buttonSignOut = document.querySelector('#buttonSignOut') //Profile
 export const buttonCPSubmit = document.querySelector('#buttonCPSubmit') //ChangePassword
 export const buttonUploadDocument = document.querySelector('#buttonUploadDocument') //Upload
+export const inputAvatar = document.querySelector('#inputAvatar') //Profile Picture
 //regular text
 export const textUserUsername = document.querySelector('#userUsername') //Profile
 export const textUserEmail = document.querySelector('#userEmail') //Profile
@@ -28,4 +29,4 @@ export const FL1 = document.querySelector('#FL1') //FeedbackList
 export const FL2 = document.querySelector('#FL2') //FeedbackList
 export const FL3 = document.querySelector('#FL3') //FeedbackList
 //images
-export const avatar = document.querySelector('#avatar') //Profile Picture
+export const imagePFP = document.querySelector('#imagePFP') //Profile Picture

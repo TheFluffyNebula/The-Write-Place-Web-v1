@@ -3,7 +3,8 @@ import {
   buttonSignOut,
   textUserUsername,
   textUserEmail,
-  avatar,
+  inputAvatar,
+  imagePFP,
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, signOut} from 'firebase/auth';
@@ -42,16 +43,16 @@ const uploadProfilePictureToStorage = async () => {
   const user = auth.currentUser;
   const userid = user.uid;
   const storageRef = ref(storage, "pfps/"+String(userid)+".jpeg");
-  const file = avatar.files[0];
+  const file = inputAvatar.files[0];
   //console.log(file);
   await uploadBytes(storageRef, file).then((snapshot) => {
     console.log('Uploaded file to storage!');
   });
   //download
-  const pfpRef = ref(storage, "pfps/"+String(userid)+".jpeg");
+  //const pfpRef = ref(storage, "pfps/"+String(userid)+".jpeg");
   getDownloadURL(pfpRef).then((url) => {
     // Insert url into an <img> tag to "download"
-    avatar.innerHTML = "<img src="+String(url)+">";
+    imagePFP.innerHTML = "<img src="+String(url)+">";
   })
 }
 
