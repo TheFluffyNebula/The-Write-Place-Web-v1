@@ -50,7 +50,7 @@ const uploadProfilePictureToStorage = async () => {
   });
   //download
   //const pfpRef = ref(storage, "pfps/"+String(userid)+".jpeg");
-  getDownloadURL(pfpRef).then((url) => {
+  getDownloadURL(storageRef).then((url) => {
     // Insert url into an <img> tag to "download"
     imagePFP.innerHTML = "<img src="+String(url)+">";
   })
