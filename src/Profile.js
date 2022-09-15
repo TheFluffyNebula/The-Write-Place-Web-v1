@@ -73,12 +73,7 @@ const uploadProfilePictureToStorage = async () => {
   await uploadBytes(storageRef, file).then((snapshot) => {
     console.log('Uploaded file to storage!');
   });
-  //download
-  //const pfpRef = ref(storage, "pfps/"+String(userid)+".jpeg");
-  getDownloadURL(storageRef).then((url) => {
-    // Insert url into an <img> tag to "download"
-    imagePFP.innerHTML = "<img src="+String(url)+">";
-  })
+  displayProfilePicture();
 }
 
 const auth = getAuth(firebaseApp);
