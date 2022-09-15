@@ -40,8 +40,11 @@ const uploadProfilePictureToStorage = async () => {
   const userid = user.uid;
   const storageRef = ref(storage, 'pfps');
   const file = avatar.files[0];
-  console.log(file);
-  console.log(typeof file);
+  //console.log(file);
+  uploadBytes(storageRef, file).then((snapshot) => {
+    console.log('Uploaded file to storage!');
+  });
+  
   //avatar.innerHTML = "<img src="+String(event.target.value)+">";
   //readAsDataURL doesn't work as it returns nothing
   //3rd attempt: URL.createObjectURL()
