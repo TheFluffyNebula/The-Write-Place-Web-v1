@@ -35,13 +35,13 @@ async function displayUsernameAndEmail(){
   textUserEmail.innerHTML = "Email:"+String(email);
 }
 
-const uploadProfilePictureToStorage = async (event) => {
+const uploadProfilePictureToStorage = async () => {
   const user = auth.currentUser;
   const userid = user.uid;
   const storageRef = ref(storage, 'pfps');
-  const fileList = event.files;
-  const pfp = fileList[0];
-  console.log(pfp);
+  const file = avatar.files[0];
+  console.log(file);
+  console.log(typeof file);
   //avatar.innerHTML = "<img src="+String(event.target.value)+">";
   //readAsDataURL doesn't work as it returns nothing
   //3rd attempt: URL.createObjectURL()
