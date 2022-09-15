@@ -46,6 +46,7 @@ const uploadProfilePictureToStorage = async (event) => {
   //readAsDataURL doesn't work as it returns nothing
   //3rd attempt: URL.createObjectURL()
 }
+
 const auth = getAuth(firebaseApp);
 const storage = getStorage();
 buttonSignOut.addEventListener("click",Sign_Out);
