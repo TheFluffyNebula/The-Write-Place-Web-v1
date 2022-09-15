@@ -39,7 +39,7 @@ const uploadProfilePictureToStorage = async (event) => {
   const user = auth.currentUser;
   const userid = user.uid;
   const storageRef = ref(storage, 'pfps');
-  const fileList = this.files;
+  const fileList = event.files;
   const pfp = fileList[0];
   console.log(pfp);
   //avatar.innerHTML = "<img src="+String(event.target.value)+">";
