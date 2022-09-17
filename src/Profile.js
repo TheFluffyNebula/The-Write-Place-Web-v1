@@ -1,4 +1,4 @@
-import './TWP.css';
+//import './TWP.css';
 import {
   buttonSignOut,
   textUserUsername,
@@ -42,7 +42,7 @@ async function displayProfilePicture(){
   const storageRef = ref(storage, "pfps/"+String(userid)+".jpeg");
   getDownloadURL(storageRef).then((url) => {
     // Insert url into an <img> tag to "download"
-    imagePFP.innerHTML = "<img src="+String(url)+">";
+    imagePFP.innerHTML = "<img src="+String(url)+">"; //todo: update width to appropriate width in css?
   }).catch((error) => {
     // A full list of error codes is available at
     // https://firebase.google.com/docs/storage/web/handle-errors
