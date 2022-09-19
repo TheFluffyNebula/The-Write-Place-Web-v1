@@ -19,7 +19,21 @@ const firebaseApp = initializeApp({
     appId: "1:144537031501:web:381f1b2964a4e95c049d04",
     measurementId: "G-RFS3FW3HTE"
 })
-
+//toast
+function initToast(){
+  document.body.insertAdjacentHTML('afterbegin','<div class="toast-container"></div>');
+  toastContainer = document.querySelector('.toast-container');
+}
+function generateToast({
+  message,
+  background = '#00214d',
+  color = 'fffffe',
+  length = '3000ms',
+}){
+  toastContainer.insertAdjacentHTML('beforeend','<p class="toast" style="background-color: ${background};  color: ${color} animation-duration: ${length}>  ${message}</p>')
+  const toast = toastContainer.lastElementChild;
+  toast.addEventListener('animationend',() => toast.remove())
+}
 // Create new account using email/password
 const createAccount = async () => {
   const email = editEmail.value;
@@ -37,6 +51,12 @@ const createAccount = async () => {
     });
   }
   catch(error) {
+    generateToast({
+      message: 'failed to create account',
+      background: "hsl(171 100% 46.1%)",
+      color: "hsl(171 100% 46.1%)",
+      length: "5000ms",
+    })
     console.log(`createAccount:failure`);
   } 
 }
@@ -55,9 +75,8 @@ const loginEmailPassword = async () => {
   }
 }
 
-
-
 buttonSignIn.addEventListener("click",loginEmailPassword);
 buttonRegister.addEventListener("click",createAccount);
+let toastContainer;
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
