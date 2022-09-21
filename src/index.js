@@ -57,6 +57,12 @@ const createAccount = async () => {
     });
   }
   catch(error) {
+    generateToast({
+      message: 'failed to create account',
+      background: "hsl(171 100% 46.1%)",
+      color: "hsl(171 100% 46.1%)",
+      length: "3000ms",
+    })
     console.log(`createAccount:failure`);
   } 
 }
