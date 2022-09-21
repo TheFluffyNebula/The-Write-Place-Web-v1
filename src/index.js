@@ -20,7 +20,7 @@ const firebaseApp = initializeApp({
     measurementId: "G-RFS3FW3HTE"
 })
 //toast
-function initToast(){
+function initToast(){//I never use this?
   document.body.insertAdjacentHTML('afterbegin','<div class="toast-container"></div>');
   toastContainer = document.querySelector('.toast-container');
 }
@@ -47,16 +47,16 @@ const createAccount = async () => {
       })
       location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
     }).catch((error) => {
+      generateToast({
+        message: 'failed to create account',
+        background: "hsl(171 100% 46.1%)",
+        color: "hsl(171 100% 46.1%)",
+        length: "3000ms",
+      })
       console.log('updateProfile:failure');
     });
   }
   catch(error) {
-    generateToast({
-      message: 'failed to create account',
-      background: "hsl(171 100% 46.1%)",
-      color: "hsl(171 100% 46.1%)",
-      length: "5000ms",
-    })
     console.log(`createAccount:failure`);
   } 
 }
