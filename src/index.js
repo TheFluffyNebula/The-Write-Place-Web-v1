@@ -27,6 +27,7 @@ async function generateToast({
   color = 'fffffe',
   length = '3000ms',
 }){
+  console.log(toastContainer);
   await toastContainer.insertAdjacentHTML('beforeend',
   '<p class="toast" style="background-color:'+String(background)+'color:'+String(color)+
   'animation-duration:'+String(length)+'>'+String(message)+'</p>');
@@ -34,11 +35,11 @@ async function generateToast({
   const toast = toastContainer.lastElementChild;
   toast.addEventListener('animationend',() => toast.remove())
 }
-async function initToast(){//looks like this is just not used
-  document.body.insertAdjacentHTML('afterbegin','<div class="toast-container"></div>');
-  toastContainer = document.querySelector('.toast-container');
-  //console.log(toastContainer);
-}
+// async function initToast(){//looks like this is just not used
+//   document.body.insertAdjacentHTML('afterbegin','<div class="toast-container"></div>');
+//   toastContainer = document.querySelector('.toast-container');
+//   //console.log(toastContainer);
+// }
 // Create new account using email/password
 const createAccount = async () => {
   const email = editEmail.value;
