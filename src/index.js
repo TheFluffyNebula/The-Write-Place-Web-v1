@@ -40,6 +40,7 @@ const createAccount = async () => {
   const email = editEmail.value;
   const password = editPassword.value;
   const username = editUsername.value;
+  initToast();
   try {
     await createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
@@ -48,7 +49,6 @@ const createAccount = async () => {
       })
       location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
     }).catch((error) => {
-      initToast();
       generateToast({
         message: 'failed to create account',
         background: "hsl(171 100% 46.1%)",
@@ -59,7 +59,6 @@ const createAccount = async () => {
     });
   }
   catch(error) {
-    initToast();
     generateToast({
       message: 'failed to create account',
       background: "hsl(171 100% 46.1%)",
