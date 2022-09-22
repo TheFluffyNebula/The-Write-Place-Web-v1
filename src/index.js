@@ -29,7 +29,7 @@ async function generateToast({
   length = '3000ms',
 }){
   console.log(toastContainer);
-  await toastContainer.insertAdjacentHTML('beforeend',
+  await toastContainer.innerHTML(
   '<p class="toast" style="background-color:'+String(background)+'color:'+String(color)+
   'animation-duration:'+String(length)+'>'+String(message)+'</p>');
   console.log(toastContainer);
