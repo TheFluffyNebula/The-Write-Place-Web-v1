@@ -20,6 +20,7 @@ const firebaseApp = initializeApp({
     measurementId: "G-RFS3FW3HTE"
 })
 //toast
+let toastContainer;
 function initToast(){//I never use this?
   document.body.insertAdjacentHTML('afterbegin','<div class="toast-container"></div>');
   toastContainer = document.querySelector('.toast-container');
@@ -83,6 +84,5 @@ const loginEmailPassword = async () => {
 
 buttonSignIn.addEventListener("click",loginEmailPassword);
 buttonRegister.addEventListener("click",createAccount);
-let toastContainer;
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
