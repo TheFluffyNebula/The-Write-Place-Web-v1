@@ -21,6 +21,7 @@ const firebaseApp = initializeApp({
 })
 //toast
 let toastContainer;
+initToast();
 async function generateToast({
   message,
   background = '#00214d',
@@ -35,11 +36,11 @@ async function generateToast({
   const toast = toastContainer.lastElementChild;
   toast.addEventListener('animationend',() => toast.remove())
 }
-// async function initToast(){//looks like this is just not used
-//   document.body.insertAdjacentHTML('afterbegin','<div class="toast-container"></div>');
-//   toastContainer = document.querySelector('.toast-container');
-//   //console.log(toastContainer);
-// }
+async function initToast(){//looks like this is just not used
+  document.body.insertAdjacentHTML('afterbegin','<div class="toast-container"></div>');
+  toastContainer = document.querySelector('.toast-container');
+  //console.log(toastContainer);
+}
 // Create new account using email/password
 const createAccount = async () => {
   const email = editEmail.value;
