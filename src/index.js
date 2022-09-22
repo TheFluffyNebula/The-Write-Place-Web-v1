@@ -21,7 +21,7 @@ const firebaseApp = initializeApp({
 })
 //toast
 let toastContainer;
-function generateToast({
+async function generateToast({
   message,
   background = '#00214d',
   color = 'fffffe',
@@ -31,7 +31,7 @@ function generateToast({
   const toast = toastContainer.lastElementChild;
   toast.addEventListener('animationend',() => toast.remove())
 }
-function initToast(){//I never use this?
+async function initToast(){//I never use this?
   document.body.insertAdjacentHTML('afterbegin','<div class="toast-container"></div>');
   toastContainer = document.querySelector('.toast-container');
 }
