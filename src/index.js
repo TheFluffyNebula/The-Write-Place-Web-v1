@@ -54,14 +54,6 @@ const createAccount = async () => {
         email: email, displayName: username,
       })
       location.assign("https://thefluffynebula.github.io/The-Write-Place-Web-v1/dist/Profile");
-    }).catch((error) => {
-      generateToast({
-        message: 'failed to create account',
-        background: "hsl(171 100% 46.1%)",
-        color: "hsl(171 100% 46.1%)",
-        length: "3000ms",
-      })
-      console.log('updateProfile:failure');
     });
   }
   catch(error) {
@@ -72,7 +64,7 @@ const createAccount = async () => {
       length: "3000ms",
     })
     console.log(`createAccount:failure`);
-  } 
+  }
 }
 
 // Login using email/password
