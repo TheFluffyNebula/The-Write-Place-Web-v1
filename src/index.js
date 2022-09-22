@@ -39,7 +39,7 @@ async function generateToast({
 }
 async function initToast(){//looks like this is just not used
   document.body.insertAdjacentHTML('afterbegin','<div class="toast-container"></div>');
-  toastContainer = document.querySelector('.toast-container');
+  toastContainer = await document.querySelector('.toast-container');
   //console.log(toastContainer);
 }
 // Create new account using email/password
