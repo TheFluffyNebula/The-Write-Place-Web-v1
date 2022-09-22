@@ -32,8 +32,9 @@ async function generateToast({
   await toastContainer.insertAdjacentHTML('beforeend',
   '<p class="toast" style="background-color:'+String(background)+'color:'+String(color)+
   'animation-duration:'+String(length)+'>'+String(message)+'</p>');
+  console.log(toastContainer);
   const toast = toastContainer.lastElementChild;
-  console.log(toast);
+  //console.log(toast);
   toast.addEventListener('animationend',() => toast.remove())
 }
 async function initToast(){//looks like this is just not used
