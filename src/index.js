@@ -21,7 +21,6 @@ const firebaseApp = initializeApp({
 })
 //toast
 let toastContainer;
-initToast();
 async function generateToast({
   message,
   background = '#00214d',
