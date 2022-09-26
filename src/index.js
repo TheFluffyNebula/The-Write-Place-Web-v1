@@ -38,7 +38,7 @@ const createAccount = async () => {
     generateToast({
       message: 'failed to make account',
       background: "hsl(171 100% 46.1%)",
-      color: "hsl(171 100% 46.1%)",
+      color: "white",
       length: "3000ms",
     })
     console.log(`createAccount:failure`);
@@ -56,8 +56,8 @@ const loginEmailPassword = async () => {
   catch(error) {
     generateToast({
       message: 'incorrect credentials',
-      background: "hsl(171 100% 46.1%)",
-      color: "hsl(171 100% 46.1%)",
+      background: "hsl(350 100% 66.5%)",
+      color: "white",
       length: "3000ms",
     })
     console.log('loginEmailPassword:failure');
