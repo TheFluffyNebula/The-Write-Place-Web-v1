@@ -87,7 +87,7 @@ const createAccount = async () => {
   }
   catch(error) {
     generateToast({
-      message: 'failed to create account',
+      message: 'failed to make account',
       background: "hsl(171 100% 46.1%)",
       color: "hsl(171 100% 46.1%)",
       length: "3000ms",
