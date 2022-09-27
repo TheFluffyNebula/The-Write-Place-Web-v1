@@ -3,6 +3,9 @@ import {
     editUploadDocumentName,
     editUploadDocumentUrl,
     buttonUploadDocument,
+    generateToast,
+    editUploadSelect,
+
 } from './ui'
 import {initializeApp} from 'firebase/app';
 import {getAuth, } from 'firebase/auth';
@@ -22,14 +25,22 @@ const createDocument = async () => {
     const displayName = user.displayName;
     const documentName = editUploadDocumentName.value;
     const documentUrl = editUploadDocumentUrl.value;
+    const documentTag = editUploadSelect.options[editUploadSelect.selectedIndex].value;
     await setDoc(doc(db, "ECG", documentName), {
         complete: false,
         date: now,
         reviewer: null,
         submitter: displayName,
         url: documentUrl,
+        tag: documentTag,
+
       });
-    alert('Document received!');
+      generateToast({
+        message: 'document received!',
+        background: "hsl(171 100% 46.1%)",
+        color: "white",
+        length: "3000ms",
+      })
 }
 buttonUploadDocument.addEventListener("click",createDocument);
 const auth = getAuth(firebaseApp);

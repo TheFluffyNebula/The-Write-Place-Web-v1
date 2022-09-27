@@ -7,7 +7,8 @@ export const editSecurePassword = document.querySelector('#editSecurePassword') 
 export const editConfirmPassword = document.querySelector('#editConfirmPassword') //ChangePassword
 export const editUploadDocumentName = document.querySelector('#editUploadDocumentName') //Upload
 export const editUploadDocumentUrl = document.querySelector('#editUploadDocumentUrl') //Upload
-
+//editSelectors
+export const editUploadSelect = document.querySelector('#editUploadTag'); //Upload
 //buttons
 export const buttonSignIn = document.querySelector('#buttonSignIn') //Login
 export const buttonRegister = document.querySelector('#buttonRegister') //Login
