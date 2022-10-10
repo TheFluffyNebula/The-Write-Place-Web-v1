@@ -21,6 +21,7 @@ const firebaseApp = initializeApp({
     measurementId: "G-RFS3FW3HTE"
 })
 const checkUsername = async () => {
+  const username = editUsername.value;
   const docRef = doc(db, "Users", username);
   const docSnap = await getDoc(docRef);
   if (docSnap.exists()) {
