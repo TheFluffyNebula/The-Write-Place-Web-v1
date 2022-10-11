@@ -1,6 +1,6 @@
 body{
     color:black;
-    background-color: lightgreen;
+    background-color: turquoise;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* background-image: url("../images/TWP_LooseLeaf.JPG");
     background-repeat: no-repeat;
@@ -38,7 +38,7 @@ div.LoginButtons{
     margin-top: 10%;
 }
 input.LoginEdit{
-    background-color: orange;
+    background-color: rgb(255, 206, 0);
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -76,7 +76,7 @@ button.UploadButton{
     border: 2px dotted purple;
 }
 input.UploadEdit{
-    background-color: orange;
+    background-color: rgb(255, 206, 0);
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -102,7 +102,7 @@ button.ForgotPassword{
     border: 2px dotted purple;
 }
 input.ForgotPasswordEdit{
-    background-color: orange;
+    background-color: rgb(255, 206, 0);
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -128,7 +128,7 @@ button.ChangePassword{
     border: 2px dotted purple;
 }
 input.ChangePasswordEdit{
-    background-color: orange;
+    background-color: rgb(255, 206, 0);
     margin-top: 10px;
     margin-bottom: 10px;
 }
